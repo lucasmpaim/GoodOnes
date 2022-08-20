@@ -17,6 +17,16 @@
 		F2B2DBB028AF1A4400AA633B /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DBAF28AF1A4400AA633B /* PhotoCell.swift */; };
 		F2B2DBB228AF294B00AA633B /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DBB128AF294B00AA633B /* GridView.swift */; };
 		F2B2DBB528AF383000AA633B /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = F2B2DBB428AF383000AA633B /* Popovers */; };
+		F2C6256828B16BF7004F8FC8 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6256728B16BF7004F8FC8 /* Loading.swift */; };
+		F2C6256F28B16D7F004F8FC8 /* bird-waiting.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C6256E28B16D7F004F8FC8 /* bird-waiting.json */; };
+		F2C6257228B16DD3004F8FC8 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F2C6257128B16DD3004F8FC8 /* Lottie */; };
+		F2C6257428B17365004F8FC8 /* Lottie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6257328B17365004F8FC8 /* Lottie.swift */; };
+		F2C6257728B17684004F8FC8 /* Also.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6257628B17684004F8FC8 /* Also.swift */; };
+		F2C6257928B17EB3004F8FC8 /* ErrorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6257828B17EB3004F8FC8 /* ErrorScreen.swift */; };
+		F2C6257B28B17F50004F8FC8 /* alien-hypnotize.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C6257A28B17F50004F8FC8 /* alien-hypnotize.json */; };
+		F2C6257D28B1872D004F8FC8 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6257C28B1872D004F8FC8 /* WelcomeScreen.swift */; };
+		F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6257F28B18ADA004F8FC8 /* DefaultButtonStyle.swift */; };
+		F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258228B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,15 @@
 		F2B2DB9F28AF049700AA633B /* GoodOnesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F2B2DBAF28AF1A4400AA633B /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F2B2DBB128AF294B00AA633B /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		F2C6256728B16BF7004F8FC8 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		F2C6256E28B16D7F004F8FC8 /* bird-waiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "bird-waiting.json"; sourceTree = "<group>"; };
+		F2C6257328B17365004F8FC8 /* Lottie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lottie.swift; sourceTree = "<group>"; };
+		F2C6257628B17684004F8FC8 /* Also.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Also.swift; sourceTree = "<group>"; };
+		F2C6257828B17EB3004F8FC8 /* ErrorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorScreen.swift; sourceTree = "<group>"; };
+		F2C6257A28B17F50004F8FC8 /* alien-hypnotize.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "alien-hypnotize.json"; sourceTree = "<group>"; };
+		F2C6257C28B1872D004F8FC8 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		F2C6257F28B18ADA004F8FC8 /* DefaultButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonStyle.swift; sourceTree = "<group>"; };
+		F2C6258228B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+SpecificCorners.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +76,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2B2DBB528AF383000AA633B /* Popovers in Frameworks */,
+				F2C6257228B16DD3004F8FC8 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +120,8 @@
 		F2B2DB8128AF048D00AA633B /* GoodOnes */ = {
 			isa = PBXGroup;
 			children = (
+				F2C6254728B16B6E004F8FC8 /* Welcome */,
+				F2C6254428B1688F004F8FC8 /* UI */,
 				F2B2DBAC28AF194C00AA633B /* GridFeature */,
 				F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */,
 				F2B2DB8428AF048D00AA633B /* ContentView.swift */,
@@ -159,6 +181,117 @@
 			path = GridFeature;
 			sourceTree = "<group>";
 		};
+		F2C6254428B1688F004F8FC8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6258128B19280004F8FC8 /* Modifiers */,
+				F2C6257E28B18AB1004F8FC8 /* Styles */,
+				F2C6257528B17670004F8FC8 /* Operator */,
+				F2C6256A28B16D59004F8FC8 /* Resources */,
+				F2C6256928B16D4F004F8FC8 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F2C6254728B16B6E004F8FC8 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6256428B16BB6004F8FC8 /* Scenes */,
+				F2C6256228B16B93004F8FC8 /* Data */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		F2C6256228B16B93004F8FC8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F2C6256328B16B98004F8FC8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6256528B16BC4004F8FC8 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F2C6256428B16BB6004F8FC8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6256628B16BD2004F8FC8 /* View */,
+				F2C6256328B16B98004F8FC8 /* Domain */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F2C6256528B16BC4004F8FC8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F2C6256628B16BD2004F8FC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6257C28B1872D004F8FC8 /* WelcomeScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2C6256928B16D4F004F8FC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6256728B16BF7004F8FC8 /* Loading.swift */,
+				F2C6257328B17365004F8FC8 /* Lottie.swift */,
+				F2C6257828B17EB3004F8FC8 /* ErrorScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F2C6256A28B16D59004F8FC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6256B28B16D5E004F8FC8 /* Animations */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2C6256B28B16D5E004F8FC8 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6257A28B17F50004F8FC8 /* alien-hypnotize.json */,
+				F2C6256E28B16D7F004F8FC8 /* bird-waiting.json */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		F2C6257528B17670004F8FC8 /* Operator */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6257628B17684004F8FC8 /* Also.swift */,
+			);
+			path = Operator;
+			sourceTree = "<group>";
+		};
+		F2C6257E28B18AB1004F8FC8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6257F28B18ADA004F8FC8 /* DefaultButtonStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F2C6258128B19280004F8FC8 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6258228B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,6 +310,7 @@
 			name = GoodOnes;
 			packageProductDependencies = (
 				F2B2DBB428AF383000AA633B /* Popovers */,
+				F2C6257128B16DD3004F8FC8 /* Lottie */,
 			);
 			productName = GoodOnes;
 			productReference = F2B2DB7F28AF048D00AA633B /* GoodOnes.app */;
@@ -252,6 +386,7 @@
 			mainGroup = F2B2DB7628AF048D00AA633B;
 			packageReferences = (
 				F2B2DBB328AF383000AA633B /* XCRemoteSwiftPackageReference "Popovers" */,
+				F2C6257028B16DD3004F8FC8 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = F2B2DB8028AF048D00AA633B /* Products */;
 			projectDirPath = "";
@@ -270,7 +405,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2B2DB8A28AF049700AA633B /* Preview Assets.xcassets in Resources */,
+				F2C6257B28B17F50004F8FC8 /* alien-hypnotize.json in Resources */,
 				F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */,
+				F2C6256F28B16D7F004F8FC8 /* bird-waiting.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,9 +433,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */,
+				F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */,
+				F2C6257728B17684004F8FC8 /* Also.swift in Sources */,
 				F2B2DBB028AF1A4400AA633B /* PhotoCell.swift in Sources */,
+				F2C6257D28B1872D004F8FC8 /* WelcomeScreen.swift in Sources */,
+				F2C6257428B17365004F8FC8 /* Lottie.swift in Sources */,
+				F2C6256828B16BF7004F8FC8 /* Loading.swift in Sources */,
 				F2B2DBB228AF294B00AA633B /* GridView.swift in Sources */,
+				F2C6257928B17EB3004F8FC8 /* ErrorScreen.swift in Sources */,
 				F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */,
+				F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +777,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		F2C6257028B16DD3004F8FC8 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -640,6 +792,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F2B2DBB328AF383000AA633B /* XCRemoteSwiftPackageReference "Popovers" */;
 			productName = Popovers;
+		};
+		F2C6257128B16DD3004F8FC8 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2C6257028B16DD3004F8FC8 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

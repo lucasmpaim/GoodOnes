@@ -8,56 +8,72 @@
 import SwiftUI
 import Popovers
 
+protocol GridViewCoordinable {
+    func didSelectPhoto(id: Int) -> AnyView
+}
+
+protocol GridViewModeling : ObservableObject {
+    
+}
+
 struct GridView: View {
     
     @State var photos: [PhotoCell.Model]
-    
     @State var isShowing: Bool = false
     @State var selectedDate = Date()
-
+    @State private var selection: String? = nil
+    
+    let coordinator: GridViewCoordinable
+    
     var body: some View {
-        NavigationView {
-            ScrollView {
-                LazyVGrid(columns: makeColumns()) {
-                    ForEach(photos, id: \.self) { photo in
-                        PhotoCell(model: photo)
-                            .aspectRatio(1, contentMode: .fit)
+        ScrollView {
+            LazyVGrid(columns: makeColumns()) {
+                ForEach(photos, id: \.self) { photo in
+                    let cell = PhotoCell(model: photo)
+                        .aspectRatio(contentMode: .fit)
+                    NavigationLink(destination:  coordinator.didSelectPhoto(id: photo.id)) {
+                        cell
                     }
                 }
-            }
-            .navigationTitle("Doggos")
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    Button {
-                        isShowing = true
-                    } label: {
-                        VStack {
-                            Text("It's me!")
+            }.padding()
+        }
+        .navigationTitle("Doggos")
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                Button {
+                    isShowing.toggle()
+                } label: {
+                    VStack {
+                        Text("It's me!")
+                        withAnimation(.easeIn(duration: 0.3)) {
                             Image(systemName: "chevron.down")
                                 .rotationEffect(.degrees( isShowing ? 180 : 0))
-                                .animation(isShowing ? Animation.linear(duration: 0.3) : .none)
                         }
                     }
-                    .popover(
-                        present: $isShowing,
-                        attributes: {
-                            $0.sourceFrameInset.top = -8
-                            $0.position = .absolute(
-                                                originAnchor: .bottom,
-                                                popoverAnchor: .top
-                                            )
-                        }
+                }
+                .popover(
+                    present: $isShowing,
+                    attributes: {
+                        $0.sourceFrameInset.top = 20
+                        $0.position = .absolute(
+                            originAnchor: .bottom,
+                            popoverAnchor: .top
+                        )
+                    }
+                ) {
+                    Templates.Container(
+                        arrowSide: .top(.centered),
+                        backgroundColor: .white
                     ) {
-                        Templates.Container(
-                            arrowSide: .top(.centered),
-                            backgroundColor: .white
+                        DatePicker(
+                            selection: $selectedDate,
+                            in: ...Date(),
+                            displayedComponents: .date
                         ) {
-                            DatePicker(selection: $selectedDate, in: ...Date()) {
-                                Text("Select Date")
-                            }.datePickerStyle(.graphical)
-                                .frame(maxHeight: 400)
-
-                        }
+                            Text("Select Date")
+                        }.datePickerStyle(.graphical)
+                            .frame(maxHeight: 400)
+                        
                     }
                 }
             }
@@ -66,46 +82,30 @@ struct GridView: View {
     }
     
     fileprivate func makeColumns() -> [GridItem] {
-        [
-            .init(.adaptive(minimum: 150, maximum: 300))
-        ]
+        return Array(repeating: GridItem(.flexible()), count: 3)
     }
 }
 
+#if DEBUG
 struct GridView_Previews: PreviewProvider {
+    
+    struct FakeCoordinator: GridViewCoordinable {
+        func didSelectPhoto(id: Int) -> AnyView {
+            AnyView(EmptyView())
+        }
+    }
+    
     static var previews: some View {
-        GridView(photos: [
-            PhotoCell.Model(
-                id: 1,
-                image: UIImage(named: "grid-image-1")!.pngData()!,
-                name: "A dog 1!"
-            ),
-            PhotoCell.Model(
-                id: 2,
-                image: UIImage(named: "grid-image-1")!.pngData()!,
-                name: "A dog 2!"
-            ),
-            PhotoCell.Model(
-                id: 3,
-                image: UIImage(named: "grid-image-1")!.pngData()!,
-                name: "A dog 3!"
-            ),
-            PhotoCell.Model(
-                id: 4,
-                image: UIImage(named: "grid-image-1")!.pngData()!,
-                name: "A dog 4!"
-            ),
-            PhotoCell.Model(
-                id: 5,
-                image: UIImage(named: "grid-image-1")!.pngData()!,
-                name: "A dog 5!"
-            ),
-            PhotoCell.Model(
-                id: 6,
-                image: UIImage(named: "grid-image-1")!.pngData()!,
-                name: "A dog 6!"
-            )
-        ])
-        .previewInterfaceOrientation(.portrait)
+        NavigationView {
+            GridView(photos: (0...99).map {
+                PhotoCell.Model(
+                    id: $0,
+                    image: UIImage(named: "grid-image-1")!.pngData()!,
+                    name: "A dog \($0)!"
+                )
+            }, coordinator: FakeCoordinator())
+            .previewInterfaceOrientation(.portrait)
+        }
     }
 }
+#endif
