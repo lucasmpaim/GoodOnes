@@ -9,23 +9,13 @@ import SwiftUI
 
 @main
 struct GoodOnesApp: App {
+    
+    @ObservedObject var mainCoordinator: MainCoordinator = .init()
+    
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                GridView(photos: (0...99).map {
-                    PhotoCell.Model(
-                        id: $0,
-                        image: UIImage(named: "grid-image-1")!.pngData()!,
-                        name: "A dog \($0)!"
-                    )
-                }, coordinator: FakeCoordinator())
-            }
+            mainCoordinator.currentRoute
         }
     }
-}
 
-struct FakeCoordinator: GridViewCoordinable {
-    func didSelectPhoto(id: Int) -> AnyView {
-        return AnyView(EmptyView())
-    }
 }

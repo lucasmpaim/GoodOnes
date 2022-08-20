@@ -45,7 +45,7 @@ fileprivate extension WelcomeScreen {
         )
         .background(
             Color.white.ignoresSafeArea(.all)
-                .cornerRadius(30, corners: [.topLeft, .topRight])
+                .cornerRadius(15, corners: [.topLeft, .topRight])
         )
     }
 }

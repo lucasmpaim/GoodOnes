@@ -12,8 +12,6 @@
 		F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8628AF049700AA633B /* Assets.xcassets */; };
 		F2B2DB8A28AF049700AA633B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8928AF049700AA633B /* Preview Assets.xcassets */; };
 		F2B2DB9428AF049700AA633B /* GoodOnesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB9328AF049700AA633B /* GoodOnesTests.swift */; };
-		F2B2DB9E28AF049700AA633B /* GoodOnesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB9D28AF049700AA633B /* GoodOnesUITests.swift */; };
-		F2B2DBA028AF049700AA633B /* GoodOnesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB9F28AF049700AA633B /* GoodOnesUITestsLaunchTests.swift */; };
 		F2B2DBB028AF1A4400AA633B /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DBAF28AF1A4400AA633B /* PhotoCell.swift */; };
 		F2B2DBB228AF294B00AA633B /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DBB128AF294B00AA633B /* GridView.swift */; };
 		F2B2DBB528AF383000AA633B /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = F2B2DBB428AF383000AA633B /* Popovers */; };
@@ -27,17 +25,13 @@
 		F2C6257D28B1872D004F8FC8 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6257C28B1872D004F8FC8 /* WelcomeScreen.swift */; };
 		F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6257F28B18ADA004F8FC8 /* DefaultButtonStyle.swift */; };
 		F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258228B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift */; };
+		F2C6258728B19B7C004F8FC8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258628B19B7C004F8FC8 /* MainCoordinator.swift */; };
+		F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258828B19B98004F8FC8 /* Coordinator.swift */; };
+		F2C6258C28B1A1E2004F8FC8 /* GeneralStateRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258B28B1A1E2004F8FC8 /* GeneralStateRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F2B2DB9028AF049700AA633B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2B2DB7728AF048D00AA633B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2B2DB7E28AF048D00AA633B;
-			remoteInfo = GoodOnes;
-		};
-		F2B2DB9A28AF049700AA633B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F2B2DB7728AF048D00AA633B /* Project object */;
 			proxyType = 1;
@@ -54,9 +48,6 @@
 		F2B2DB8928AF049700AA633B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2B2DB8F28AF049700AA633B /* GoodOnesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodOnesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B2DB9328AF049700AA633B /* GoodOnesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesTests.swift; sourceTree = "<group>"; };
-		F2B2DB9928AF049700AA633B /* GoodOnesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodOnesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2B2DB9D28AF049700AA633B /* GoodOnesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesUITests.swift; sourceTree = "<group>"; };
-		F2B2DB9F28AF049700AA633B /* GoodOnesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F2B2DBAF28AF1A4400AA633B /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F2B2DBB128AF294B00AA633B /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		F2C6256728B16BF7004F8FC8 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
@@ -68,6 +59,9 @@
 		F2C6257C28B1872D004F8FC8 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		F2C6257F28B18ADA004F8FC8 /* DefaultButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultButtonStyle.swift; sourceTree = "<group>"; };
 		F2C6258228B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CornerRadius+SpecificCorners.swift"; sourceTree = "<group>"; };
+		F2C6258628B19B7C004F8FC8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F2C6258828B19B98004F8FC8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F2C6258B28B1A1E2004F8FC8 /* GeneralStateRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStateRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,13 +81,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2B2DB9628AF049700AA633B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -102,7 +89,6 @@
 			children = (
 				F2B2DB8128AF048D00AA633B /* GoodOnes */,
 				F2B2DB9228AF049700AA633B /* GoodOnesTests */,
-				F2B2DB9C28AF049700AA633B /* GoodOnesUITests */,
 				F2B2DB8028AF048D00AA633B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,7 +98,6 @@
 			children = (
 				F2B2DB7F28AF048D00AA633B /* GoodOnes.app */,
 				F2B2DB8F28AF049700AA633B /* GoodOnesTests.xctest */,
-				F2B2DB9928AF049700AA633B /* GoodOnesUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +105,8 @@
 		F2B2DB8128AF048D00AA633B /* GoodOnes */ = {
 			isa = PBXGroup;
 			children = (
+				F2C6258528B19B60004F8FC8 /* CoreCoordinator */,
+				F2C6258428B1994F004F8FC8 /* Tutorial */,
 				F2C6254728B16B6E004F8FC8 /* Welcome */,
 				F2C6254428B1688F004F8FC8 /* UI */,
 				F2B2DBAC28AF194C00AA633B /* GridFeature */,
@@ -142,18 +129,10 @@
 		F2B2DB9228AF049700AA633B /* GoodOnesTests */ = {
 			isa = PBXGroup;
 			children = (
+				F2C6258A28B1A1C7004F8FC8 /* RepositoryTests */,
 				F2B2DB9328AF049700AA633B /* GoodOnesTests.swift */,
 			);
 			path = GoodOnesTests;
-			sourceTree = "<group>";
-		};
-		F2B2DB9C28AF049700AA633B /* GoodOnesUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F2B2DB9D28AF049700AA633B /* GoodOnesUITests.swift */,
-				F2B2DB9F28AF049700AA633B /* GoodOnesUITestsLaunchTests.swift */,
-			);
-			path = GoodOnesUITests;
 			sourceTree = "<group>";
 		};
 		F2B2DBAC28AF194C00AA633B /* GridFeature */ = {
@@ -292,6 +271,30 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		F2C6258428B1994F004F8FC8 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		F2C6258528B19B60004F8FC8 /* CoreCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6258628B19B7C004F8FC8 /* MainCoordinator.swift */,
+				F2C6258828B19B98004F8FC8 /* Coordinator.swift */,
+			);
+			path = CoreCoordinator;
+			sourceTree = "<group>";
+		};
+		F2C6258A28B1A1C7004F8FC8 /* RepositoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6258B28B1A1E2004F8FC8 /* GeneralStateRepositoryTests.swift */,
+			);
+			path = RepositoryTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,24 +337,6 @@
 			productReference = F2B2DB8F28AF049700AA633B /* GoodOnesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F2B2DB9828AF049700AA633B /* GoodOnesUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2B2DBA928AF049700AA633B /* Build configuration list for PBXNativeTarget "GoodOnesUITests" */;
-			buildPhases = (
-				F2B2DB9528AF049700AA633B /* Sources */,
-				F2B2DB9628AF049700AA633B /* Frameworks */,
-				F2B2DB9728AF049700AA633B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F2B2DB9B28AF049700AA633B /* PBXTargetDependency */,
-			);
-			name = GoodOnesUITests;
-			productName = GoodOnesUITests;
-			productReference = F2B2DB9928AF049700AA633B /* GoodOnesUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -366,10 +351,6 @@
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					F2B2DB8E28AF049700AA633B = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = F2B2DB7E28AF048D00AA633B;
-					};
-					F2B2DB9828AF049700AA633B = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = F2B2DB7E28AF048D00AA633B;
 					};
@@ -394,7 +375,6 @@
 			targets = (
 				F2B2DB7E28AF048D00AA633B /* GoodOnes */,
 				F2B2DB8E28AF049700AA633B /* GoodOnesTests */,
-				F2B2DB9828AF049700AA633B /* GoodOnesUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -418,13 +398,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2B2DB9728AF049700AA633B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -433,6 +406,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */,
+				F2C6258728B19B7C004F8FC8 /* MainCoordinator.swift in Sources */,
+				F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */,
 				F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */,
 				F2C6257728B17684004F8FC8 /* Also.swift in Sources */,
 				F2B2DBB028AF1A4400AA633B /* PhotoCell.swift in Sources */,
@@ -450,16 +425,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C6258C28B1A1E2004F8FC8 /* GeneralStateRepositoryTests.swift in Sources */,
 				F2B2DB9428AF049700AA633B /* GoodOnesTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2B2DB9528AF049700AA633B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2B2DBA028AF049700AA633B /* GoodOnesUITestsLaunchTests.swift in Sources */,
-				F2B2DB9E28AF049700AA633B /* GoodOnesUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,11 +437,6 @@
 			isa = PBXTargetDependency;
 			target = F2B2DB7E28AF048D00AA633B /* GoodOnes */;
 			targetProxy = F2B2DB9028AF049700AA633B /* PBXContainerItemProxy */;
-		};
-		F2B2DB9B28AF049700AA633B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2B2DB7E28AF048D00AA633B /* GoodOnes */;
-			targetProxy = F2B2DB9A28AF049700AA633B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -691,42 +653,6 @@
 			};
 			name = Release;
 		};
-		F2B2DBAA28AF049700AA633B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4588TAK2RM;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lpaim.GoodOnesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GoodOnes;
-			};
-			name = Debug;
-		};
-		F2B2DBAB28AF049700AA633B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4588TAK2RM;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.lpaim.GoodOnesUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GoodOnes;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -753,15 +679,6 @@
 			buildConfigurations = (
 				F2B2DBA728AF049700AA633B /* Debug */,
 				F2B2DBA828AF049700AA633B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2B2DBA928AF049700AA633B /* Build configuration list for PBXNativeTarget "GoodOnesUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2B2DBAA28AF049700AA633B /* Debug */,
-				F2B2DBAB28AF049700AA633B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
