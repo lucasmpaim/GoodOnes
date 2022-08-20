@@ -28,6 +28,9 @@
 		F2C6258728B19B7C004F8FC8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258628B19B7C004F8FC8 /* MainCoordinator.swift */; };
 		F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258828B19B98004F8FC8 /* Coordinator.swift */; };
 		F2C6258C28B1A1E2004F8FC8 /* GeneralStateRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258B28B1A1E2004F8FC8 /* GeneralStateRepositoryTests.swift */; };
+		F2C6259028B1A769004F8FC8 /* GeneralStateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258F28B1A769004F8FC8 /* GeneralStateStorage.swift */; };
+		F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6259128B1A77F004F8FC8 /* GeneralStateRepository.swift */; };
+		F2C6259428B1A79F004F8FC8 /* GeneralState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6259328B1A79F004F8FC8 /* GeneralState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		F2C6258628B19B7C004F8FC8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		F2C6258828B19B98004F8FC8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		F2C6258B28B1A1E2004F8FC8 /* GeneralStateRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStateRepositoryTests.swift; sourceTree = "<group>"; };
+		F2C6258F28B1A769004F8FC8 /* GeneralStateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStateStorage.swift; sourceTree = "<group>"; };
+		F2C6259128B1A77F004F8FC8 /* GeneralStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStateRepository.swift; sourceTree = "<group>"; };
+		F2C6259328B1A79F004F8FC8 /* GeneralState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,7 @@
 		F2B2DB8128AF048D00AA633B /* GoodOnes */ = {
 			isa = PBXGroup;
 			children = (
+				F2C6258D28B1A736004F8FC8 /* CoreRepository */,
 				F2C6258528B19B60004F8FC8 /* CoreCoordinator */,
 				F2C6258428B1994F004F8FC8 /* Tutorial */,
 				F2C6254728B16B6E004F8FC8 /* Welcome */,
@@ -295,6 +302,24 @@
 			path = RepositoryTests;
 			sourceTree = "<group>";
 		};
+		F2C6258D28B1A736004F8FC8 /* CoreRepository */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6258E28B1A74F004F8FC8 /* Sources */,
+			);
+			path = CoreRepository;
+			sourceTree = "<group>";
+		};
+		F2C6258E28B1A74F004F8FC8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6258F28B1A769004F8FC8 /* GeneralStateStorage.swift */,
+				F2C6259128B1A77F004F8FC8 /* GeneralStateRepository.swift */,
+				F2C6259328B1A79F004F8FC8 /* GeneralState.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -417,7 +442,10 @@
 				F2B2DBB228AF294B00AA633B /* GridView.swift in Sources */,
 				F2C6257928B17EB3004F8FC8 /* ErrorScreen.swift in Sources */,
 				F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */,
+				F2C6259428B1A79F004F8FC8 /* GeneralState.swift in Sources */,
+				F2C6259028B1A769004F8FC8 /* GeneralStateStorage.swift in Sources */,
 				F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */,
+				F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
