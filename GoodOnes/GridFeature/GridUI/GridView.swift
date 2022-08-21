@@ -41,14 +41,14 @@ fileprivate extension GridView {
     func idle() -> some View {
         ScrollView {
             LazyVGrid(columns: makeColumns()) {
-                ForEach(viewModel.photos, id: \.self) { photo in
-                    let cell = PhotoCell(model: photo)
+                ForEach(Array(viewModel.photos.enumerated()), id: \.offset) {
+                    let cell = PhotoCell(model: $0.element)
                         .frame(width: 80, alignment: .center)
                         .aspectRatio(1, contentMode: .fill)
                         .clipped()
-//                    NavigationLink(destination:  coordinator.didSelectPhoto(id: photo.id)) {
-                    cell
-//                    }
+                    NavigationLink(destination: viewModel.photoDetailDestination(at: $0.offset)) {
+                        cell
+                    }
                 }
             }.padding()
         }
@@ -118,6 +118,10 @@ struct GridView_Previews: PreviewProvider {
         
         func close() {
             
+        }
+        
+        func photoDetailDestination(at index: Int) -> AnyView {
+            return AnyView { EmptyView() }
         }
     }
     

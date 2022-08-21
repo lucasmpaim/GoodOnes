@@ -12,13 +12,15 @@ import Photos
 
 
 protocol GridViewCoordinable: AnyObject {
-    func didSelectPhoto(id: Int) -> AnyView
+    func photoDetailDestination() -> AnyView
     func close()
 }
 
 protocol GridViewModeling : ObservableObject {
     var state: GridViewState { get }
     var photos: [PhotoCell.Model] { get }
+    
+    func photoDetailDestination(at index: Int) -> AnyView
     
     func close()
 }
@@ -53,6 +55,10 @@ final class CameraRollGridViewModel: GridViewModeling {
     
     func close() {
         self.coordinator.close()
+    }
+    
+    func photoDetailDestination(at index: Int) -> AnyView {
+        return coordinator.photoDetailDestination()
     }
 }
 

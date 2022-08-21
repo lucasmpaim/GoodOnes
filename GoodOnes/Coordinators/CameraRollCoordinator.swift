@@ -41,8 +41,8 @@ final class CameraRollCoordinator : ObservableObject, Coordinator {
 }
 
 extension CameraRollCoordinator : GridViewCoordinable {
-    func didSelectPhoto(id: Int) -> AnyView {
-        return AnyView { NavigationLink(destination: Color.red) { EmptyView() } }
+    func photoDetailDestination() -> AnyView {
+        return AnyView { Color.accentColor }
     }
     
     func close() { self.end() }
