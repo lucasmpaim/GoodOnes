@@ -47,6 +47,8 @@
 		F2C625D828B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625D728B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift */; };
 		F2C625DA28B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625D928B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift */; };
 		F2C625DD28B2D1EA004F8FC8 /* Publishers+ZipMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */; };
+		F2C625E028B2DBAF004F8FC8 /* DateHelper in Frameworks */ = {isa = PBXBuildFile; productRef = F2C625DF28B2DBAF004F8FC8 /* DateHelper */; };
+		F2C625E328B2DBCC004F8FC8 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,7 @@
 		F2C625D728B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCameraAssetsUseCase.swift; sourceTree = "<group>"; };
 		F2C625D928B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCameraAssetImageUseCase.swift; sourceTree = "<group>"; };
 		F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+ZipMany.swift"; sourceTree = "<group>"; };
+		F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C625E028B2DBAF004F8FC8 /* DateHelper in Frameworks */,
 				F2B2DBB528AF383000AA633B /* Popovers in Frameworks */,
 				F2C6257228B16DD3004F8FC8 /* Lottie in Frameworks */,
 			);
@@ -468,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */,
+				F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -491,6 +496,7 @@
 			packageProductDependencies = (
 				F2B2DBB428AF383000AA633B /* Popovers */,
 				F2C6257128B16DD3004F8FC8 /* Lottie */,
+				F2C625DF28B2DBAF004F8FC8 /* DateHelper */,
 			);
 			productName = GoodOnes;
 			productReference = F2B2DB7F28AF048D00AA633B /* GoodOnes.app */;
@@ -545,6 +551,7 @@
 			packageReferences = (
 				F2B2DBB328AF383000AA633B /* XCRemoteSwiftPackageReference "Popovers" */,
 				F2C6257028B16DD3004F8FC8 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				F2C625DE28B2DBAF004F8FC8 /* XCRemoteSwiftPackageReference "DateHelper" */,
 			);
 			productRefGroup = F2B2DB8028AF048D00AA633B /* Products */;
 			projectDirPath = "";
@@ -613,6 +620,7 @@
 				F2C625D828B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift in Sources */,
 				F2C625A628B1B08D004F8FC8 /* TutorialViewModel.swift in Sources */,
 				F2C625C528B1B0E2004F8FC8 /* TutorialAnimations.swift in Sources */,
+				F2C625E328B2DBCC004F8FC8 /* Date+Formatter.swift in Sources */,
 				F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -900,6 +908,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		F2C625DE28B2DBAF004F8FC8 /* XCRemoteSwiftPackageReference "DateHelper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/melvitax/DateHelper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -912,6 +928,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F2C6257028B16DD3004F8FC8 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		F2C625DF28B2DBAF004F8FC8 /* DateHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2C625DE28B2DBAF004F8FC8 /* XCRemoteSwiftPackageReference "DateHelper" */;
+			productName = DateHelper;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

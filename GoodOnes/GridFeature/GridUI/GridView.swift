@@ -15,12 +15,8 @@ enum GridViewState {
 
 struct GridView<VM: GridViewModeling>: View {
     
-    @State var isShowing: Bool = false
-    @State var selectedDate = Date()
     @State private var selection: String? = nil
-    
     @ObservedObject var viewModel: VM
-    
     @State var screenTitle: String = ""
     
     var body: some View {
@@ -41,14 +37,19 @@ fileprivate extension GridView {
     func idle() -> some View {
         ScrollView {
             LazyVGrid(columns: makeColumns()) {
-                ForEach(Array(viewModel.photos.enumerated()), id: \.offset) {
-                    let cell = PhotoCell(model: $0.element)
-                        .frame(width: 80, alignment: .center)
+                ForEach(Array(viewModel.photos.enumerated()), id: \.offset) { (offset, element) in
+                    let cell = PhotoCell(model: element)
+                        .frame(width: 120, alignment: .center)
                         .aspectRatio(1, contentMode: .fill)
                         .clipped()
-                    NavigationLink(destination: viewModel.photoDetailDestination(at: $0.offset)) {
+                    NavigationLink(destination: viewModel.photoDetailDestination(at: offset)) {
                         cell
-                    }
+                    }.onAppear(perform: {
+                        if(Float(offset) >= Float(viewModel.photos.count) * 0.8) {
+                            viewModel.nextPage()
+                        }
+                    })
+                    
                 }
             }.padding()
         }
@@ -56,18 +57,18 @@ fileprivate extension GridView {
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Button {
-                    isShowing.toggle()
+                    viewModel.isShowing = true
                 } label: {
                     VStack {
-                        Text("It's me!")
+                        Text(viewModel.selectedDate.uiFormat ?? "")
                         withAnimation(.easeIn(duration: 0.3)) {
                             Image(systemName: "chevron.down")
-                                .rotationEffect(.degrees( isShowing ? 180 : 0))
+                                .rotationEffect(.degrees( viewModel.isShowing ? 180 : 0))
                         }
                     }
                 }
                 .popover(
-                    present: $isShowing,
+                    present: $viewModel.isShowing,
                     attributes: {
                         $0.sourceFrameInset.top = 20
                         $0.position = .absolute(
@@ -80,7 +81,7 @@ fileprivate extension GridView {
                         arrowSide: .top(.centered)
                     ) {
                         DatePicker(
-                            selection: $selectedDate,
+                            selection: $viewModel.selectedDate,
                             in: ...Date(),
                             displayedComponents: .date
                         ) {
@@ -106,19 +107,30 @@ fileprivate extension GridView {
 #if DEBUG
 struct GridView_Previews: PreviewProvider {
     
-    final class FakeViewModel: GridViewModeling {
+    final class StubViewModel: GridViewModeling {
+        
+        @Published var selectedDate: Date = .now
+        var selectedDateBinding: Binding<Date> {
+            Binding(get: { self.selectedDate }, set: { self.selectedDate = $0 })
+        }
+        
+        @Published var isShowing: Bool = false
+        var isShowingBinding: Binding<Bool> {
+            Binding(get: { self.isShowing }, set: { self.isShowing = $0 })
+        }
+
         var state: GridViewState = .idle
-        @Published var photos: [PhotoCell.Model] = (0...99).map {
+        @Published var photos: [PhotoCell.Model] = (0...99).map { _ in
             PhotoCell.Model(
-                id: $0,
-                image: UIImage(named: "grid-image-1")!,
-                name: "A dog \($0)!"
+                image: UIImage(named: "grid-image-1")!
             )
         }
         
         func close() {
             
         }
+        
+        func nextPage() { }
         
         func photoDetailDestination(at index: Int) -> AnyView {
             return AnyView { EmptyView() }
@@ -127,7 +139,7 @@ struct GridView_Previews: PreviewProvider {
     
     static var previews: some View {
         NavigationView {
-            GridView(viewModel: FakeViewModel())
+            GridView(viewModel: StubViewModel())
             .previewInterfaceOrientation(.portrait)
         }
     }
