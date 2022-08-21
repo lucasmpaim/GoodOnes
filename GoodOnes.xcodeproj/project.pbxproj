@@ -147,13 +147,11 @@
 		F2B2DB8128AF048D00AA633B /* GoodOnes */ = {
 			isa = PBXGroup;
 			children = (
+				F2C625E428B2F47C004F8FC8 /* Scenes */,
 				F2C625DB28B2D1D7004F8FC8 /* Extensions */,
-				F2C625D328B2A8FD004F8FC8 /* CameraRollGrid */,
 				F2C625D028B28DD0004F8FC8 /* Coordinators */,
 				F2C6258D28B1A736004F8FC8 /* CoreRepository */,
 				F2C6258528B19B60004F8FC8 /* CoreCoordinator */,
-				F2C6258428B1994F004F8FC8 /* Tutorial */,
-				F2C6254728B16B6E004F8FC8 /* Welcome */,
 				F2C6254428B1688F004F8FC8 /* UI */,
 				F2B2DBAC28AF194C00AA633B /* GridFeature */,
 				F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */,
@@ -475,6 +473,16 @@
 				F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F2C625E428B2F47C004F8FC8 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625D328B2A8FD004F8FC8 /* CameraRollGrid */,
+				F2C6258428B1994F004F8FC8 /* Tutorial */,
+				F2C6254728B16B6E004F8FC8 /* Welcome */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
