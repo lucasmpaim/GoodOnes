@@ -8,26 +8,75 @@
 import SwiftUI
 
 
-protocol TutorialCoordinable {
-    func didFinishTutorial()
-}
 
-struct TutorialScreen: View {
-    
-    let coordinator: TutorialCoordinable
+
+struct TutorialScreen<VM: TutorialScreenViewModeling>: View {
+
+    @ObservedObject var viewModel: VM
+    @State var selectionPage: Int = .zero
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            
+            Color.cyan
+                .ignoresSafeArea()
+            
+            VStack {
+                TabView(selection: $selectionPage) {
+                    ForEach(Array(viewModel.content.enumerated()), id: \.offset) {
+                        tutorialPage(model: $0.element)
+                            .tag($0.offset)
+                    }
+                }
+                .tabViewStyle(.page(indexDisplayMode: .always))
+                .indexViewStyle(.page(backgroundDisplayMode: .always))
+                
+                finishButton()
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func finishButton() -> some View {
+        let isLastPage = selectionPage == viewModel.content.count - 1
+        
+        Button {
+            isLastPage ? viewModel.didFinishTutorial() : viewModel.didSkipTutorial()
+        } label: {
+            Text( isLastPage ? "Enter on App" : "Skip Tutorial")
+        }.buttonStyle(DefaultButtonStyle())
+            .padding()
+    }
+    
+    @ViewBuilder
+    fileprivate func tutorialPage(model: TutorialScreenModel) -> some View {
+        GeometryReader { proxy in
+            let animationWidth = proxy.frame(in: .local).width * 0.8
+            VStack(alignment:.center) {
+                LottieView(animation: model.animation)
+                    .frame(maxWidth: animationWidth)
+                    .aspectRatio(contentMode: .fit)
+                Text(model.title)
+                    .padding()
+                    .font(.title.bold())
+                Text(model.description)
+            }.padding()
+                .foregroundColor(.black)
+        }
     }
 }
 
 #if DEBUG
 struct TutorialScreen_Previews: PreviewProvider {
-    struct FakeCoordinator: TutorialCoordinable {
+    final class FakeViewModel: TutorialScreenViewModeling {
         func didFinishTutorial() { }
+        
+        func didSkipTutorial() { }
+        
+        var content: [TutorialScreenModel] = TutorialContentProvider().content
     }
     static var previews: some View {
-        TutorialScreen(coordinator: FakeCoordinator())
+        TutorialScreen(viewModel: FakeViewModel())
     }
 }
 #endif

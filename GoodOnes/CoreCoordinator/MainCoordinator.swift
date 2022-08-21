@@ -8,10 +8,6 @@
 import Foundation
 import SwiftUI
 
-enum AppRoute {
-    case onboarding
-    case grid
-}
 
 final class MainCoordinator : ObservableObject, Coordinator {
     @Published var currentRoute: AnyView = AnyView(EmptyView())
@@ -23,14 +19,10 @@ final class MainCoordinator : ObservableObject, Coordinator {
     
     func start() {
         if repository[.tutorialIsDone] {
-            currentRoute = AnyView { WelcomeScreen() }
+            enterOnWelcome()
         } else {
-            showGrid()
+            enterOnTutorial()
         }
-    }
-    
-    func didFinishSplashScreen() {
-        showGrid()
     }
     
     fileprivate func showGrid() {
@@ -41,11 +33,29 @@ final class MainCoordinator : ObservableObject, Coordinator {
         }
     }
     
+    fileprivate func enterOnTutorial() {
+        currentRoute = AnyView {
+            TutorialScreen(
+                viewModel: TutorialViewModel(coordinator: self)
+            )
+        }
+    }
+    
+    fileprivate func enterOnWelcome() {
+        currentRoute = AnyView { WelcomeScreen() }
+    }
+    
 }
 
 extension AnyView {
     init<V: View>(@ViewBuilder _ builder: () -> V) {
         self.init(builder())
+    }
+}
+
+extension MainCoordinator: TutorialCoordinable {
+    func didFinishTutorial() {
+        enterOnWelcome()
     }
 }
 

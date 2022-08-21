@@ -32,6 +32,14 @@
 		F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6259128B1A77F004F8FC8 /* GeneralStateRepository.swift */; };
 		F2C6259428B1A79F004F8FC8 /* GeneralState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6259328B1A79F004F8FC8 /* GeneralState.swift */; };
 		F2C6259828B1ADEA004F8FC8 /* TutorialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6259728B1ADEA004F8FC8 /* TutorialScreen.swift */; };
+		F2C625A028B1B051004F8FC8 /* image-scanning.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C6259D28B1B050004F8FC8 /* image-scanning.json */; };
+		F2C625A128B1B051004F8FC8 /* shiba-relax.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C6259E28B1B050004F8FC8 /* shiba-relax.json */; };
+		F2C625A228B1B051004F8FC8 /* traveling-camera.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C6259F28B1B051004F8FC8 /* traveling-camera.json */; };
+		F2C625A628B1B08D004F8FC8 /* TutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625A528B1B08D004F8FC8 /* TutorialViewModel.swift */; };
+		F2C625C328B1B0C2004F8FC8 /* TutorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625C228B1B0C2004F8FC8 /* TutorialModel.swift */; };
+		F2C625C528B1B0E2004F8FC8 /* TutorialAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625C428B1B0E2004F8FC8 /* TutorialAnimations.swift */; };
+		F2C625C828B1B1DF004F8FC8 /* TutorialContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625C728B1B1DF004F8FC8 /* TutorialContentProvider.swift */; };
+		F2C625CA28B1B2AE004F8FC8 /* design-drawing.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C625C928B1B2AE004F8FC8 /* design-drawing.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +78,14 @@
 		F2C6259128B1A77F004F8FC8 /* GeneralStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStateRepository.swift; sourceTree = "<group>"; };
 		F2C6259328B1A79F004F8FC8 /* GeneralState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralState.swift; sourceTree = "<group>"; };
 		F2C6259728B1ADEA004F8FC8 /* TutorialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreen.swift; sourceTree = "<group>"; };
+		F2C6259D28B1B050004F8FC8 /* image-scanning.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "image-scanning.json"; sourceTree = "<group>"; };
+		F2C6259E28B1B050004F8FC8 /* shiba-relax.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "shiba-relax.json"; sourceTree = "<group>"; };
+		F2C6259F28B1B051004F8FC8 /* traveling-camera.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "traveling-camera.json"; sourceTree = "<group>"; };
+		F2C625A528B1B08D004F8FC8 /* TutorialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewModel.swift; sourceTree = "<group>"; };
+		F2C625C228B1B0C2004F8FC8 /* TutorialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialModel.swift; sourceTree = "<group>"; };
+		F2C625C428B1B0E2004F8FC8 /* TutorialAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialAnimations.swift; sourceTree = "<group>"; };
+		F2C625C728B1B1DF004F8FC8 /* TutorialContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentProvider.swift; sourceTree = "<group>"; };
+		F2C625C928B1B2AE004F8FC8 /* design-drawing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "design-drawing.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +343,7 @@
 		F2C6259928B1AEFC004F8FC8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F2C6259C28B1B031004F8FC8 /* Animations */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -334,6 +351,9 @@
 		F2C6259A28B1AF04004F8FC8 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F2C625C128B1B0B3004F8FC8 /* Models */,
+				F2C625A428B1B077004F8FC8 /* Animations */,
+				F2C625A328B1B069004F8FC8 /* Domain */,
 				F2C6259B28B1AF0B004F8FC8 /* Views */,
 			);
 			path = Sources;
@@ -345,6 +365,50 @@
 				F2C6259728B1ADEA004F8FC8 /* TutorialScreen.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F2C6259C28B1B031004F8FC8 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625C928B1B2AE004F8FC8 /* design-drawing.json */,
+				F2C6259D28B1B050004F8FC8 /* image-scanning.json */,
+				F2C6259E28B1B050004F8FC8 /* shiba-relax.json */,
+				F2C6259F28B1B051004F8FC8 /* traveling-camera.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		F2C625A328B1B069004F8FC8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625C628B1B1CF004F8FC8 /* Data */,
+				F2C625A528B1B08D004F8FC8 /* TutorialViewModel.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		F2C625A428B1B077004F8FC8 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625C428B1B0E2004F8FC8 /* TutorialAnimations.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		F2C625C128B1B0B3004F8FC8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625C228B1B0C2004F8FC8 /* TutorialModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F2C625C628B1B1CF004F8FC8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625C728B1B1DF004F8FC8 /* TutorialContentProvider.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,9 +500,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C625CA28B1B2AE004F8FC8 /* design-drawing.json in Resources */,
+				F2C625A228B1B051004F8FC8 /* traveling-camera.json in Resources */,
 				F2B2DB8A28AF049700AA633B /* Preview Assets.xcassets in Resources */,
 				F2C6257B28B17F50004F8FC8 /* alien-hypnotize.json in Resources */,
 				F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */,
+				F2C625A028B1B051004F8FC8 /* image-scanning.json in Resources */,
+				F2C625A128B1B051004F8FC8 /* shiba-relax.json in Resources */,
 				F2C6256F28B16D7F004F8FC8 /* bird-waiting.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,6 +530,7 @@
 				F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */,
 				F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */,
 				F2C6257728B17684004F8FC8 /* Also.swift in Sources */,
+				F2C625C828B1B1DF004F8FC8 /* TutorialContentProvider.swift in Sources */,
 				F2B2DBB028AF1A4400AA633B /* PhotoCell.swift in Sources */,
 				F2C6257D28B1872D004F8FC8 /* WelcomeScreen.swift in Sources */,
 				F2C6257428B17365004F8FC8 /* Lottie.swift in Sources */,
@@ -470,9 +539,12 @@
 				F2C6257928B17EB3004F8FC8 /* ErrorScreen.swift in Sources */,
 				F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */,
 				F2C6259428B1A79F004F8FC8 /* GeneralState.swift in Sources */,
+				F2C625C328B1B0C2004F8FC8 /* TutorialModel.swift in Sources */,
 				F2C6259828B1ADEA004F8FC8 /* TutorialScreen.swift in Sources */,
 				F2C6259028B1A769004F8FC8 /* GeneralStateStorage.swift in Sources */,
 				F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */,
+				F2C625A628B1B08D004F8FC8 /* TutorialViewModel.swift in Sources */,
+				F2C625C528B1B0E2004F8FC8 /* TutorialAnimations.swift in Sources */,
 				F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
