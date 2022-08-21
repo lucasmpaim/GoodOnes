@@ -12,6 +12,10 @@ struct GoodOnesApp: App {
     
     @ObservedObject var mainCoordinator: MainCoordinator = .init()
     
+    init() {
+        mainCoordinator.start()
+    }
+    
     var body: some Scene {
         WindowGroup {
             mainCoordinator.currentRoute

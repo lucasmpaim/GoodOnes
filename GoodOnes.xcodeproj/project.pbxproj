@@ -31,6 +31,7 @@
 		F2C6259028B1A769004F8FC8 /* GeneralStateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6258F28B1A769004F8FC8 /* GeneralStateStorage.swift */; };
 		F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6259128B1A77F004F8FC8 /* GeneralStateRepository.swift */; };
 		F2C6259428B1A79F004F8FC8 /* GeneralState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6259328B1A79F004F8FC8 /* GeneralState.swift */; };
+		F2C6259828B1ADEA004F8FC8 /* TutorialScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C6259728B1ADEA004F8FC8 /* TutorialScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		F2C6258F28B1A769004F8FC8 /* GeneralStateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStateStorage.swift; sourceTree = "<group>"; };
 		F2C6259128B1A77F004F8FC8 /* GeneralStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralStateRepository.swift; sourceTree = "<group>"; };
 		F2C6259328B1A79F004F8FC8 /* GeneralState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralState.swift; sourceTree = "<group>"; };
+		F2C6259728B1ADEA004F8FC8 /* TutorialScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +283,8 @@
 		F2C6258428B1994F004F8FC8 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				F2C6259A28B1AF04004F8FC8 /* Sources */,
+				F2C6259928B1AEFC004F8FC8 /* Resources */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -318,6 +322,29 @@
 				F2C6259328B1A79F004F8FC8 /* GeneralState.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		F2C6259928B1AEFC004F8FC8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F2C6259A28B1AF04004F8FC8 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6259B28B1AF0B004F8FC8 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F2C6259B28B1AF0B004F8FC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6259728B1ADEA004F8FC8 /* TutorialScreen.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +470,7 @@
 				F2C6257928B17EB3004F8FC8 /* ErrorScreen.swift in Sources */,
 				F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */,
 				F2C6259428B1A79F004F8FC8 /* GeneralState.swift in Sources */,
+				F2C6259828B1ADEA004F8FC8 /* TutorialScreen.swift in Sources */,
 				F2C6259028B1A769004F8FC8 /* GeneralStateStorage.swift in Sources */,
 				F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */,
 				F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */,

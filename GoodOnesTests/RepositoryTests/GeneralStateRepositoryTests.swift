@@ -10,11 +10,16 @@ import XCTest
 @testable import GoodOnes
 
 
-final class UserDefaultTests: XCTestCase {
+final class GeneralStateRepositoryTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        UserDefaults.resetStandardUserDefaults()
+        GeneralStateRepositoryTests.clearUserDefaults()
+    }
+    
+    override class func tearDown() {
+        super.tearDown()
+        clearUserDefaults()
     }
     
     func test_saveUserFinishedOnboarding_saveCorrectlyOnUserDefaults() {
@@ -28,4 +33,11 @@ final class UserDefaultTests: XCTestCase {
         XCTAssertTrue(sut[.tutorialIsDone])
     }
     
+}
+
+extension GeneralStateRepositoryTests {
+    class func clearUserDefaults() {
+        guard let bundleIdentifier = Bundle.main.bundleIdentifier else { return }
+        UserDefaults.standard.removePersistentDomain(forName: bundleIdentifier)
+    }
 }

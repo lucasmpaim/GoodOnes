@@ -14,7 +14,6 @@ final class GeneralStateRepository : GeneralStateStorage {
         self.userDefaults = userDefaults
     }
     
-    
     subscript(key: GeneralState.BooleanFields) -> Bool {
         get {
             return userDefaults.bool(forKey: uniqueKey(for: key))

@@ -30,6 +30,7 @@ fileprivate extension WelcomeScreen {
                 Text("Welcome do Good Ones App\n") +
                 Text("Don't care about your photos, we take care of everything for you")
             ).padding()
+             .foregroundColor(.black)
             Spacer()
             HStack(alignment: .center) {
                 Button("Gallery Photos") {}

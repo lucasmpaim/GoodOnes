@@ -9,19 +9,31 @@ import Foundation
 import SwiftUI
 
 enum AppRoute {
-    case splashScreen,
-    onboarding,
-    grid
+    case onboarding
+    case grid
 }
 
 final class MainCoordinator : ObservableObject, Coordinator {
     @Published var currentRoute: AnyView = AnyView(EmptyView())
     
+    private let repository: GeneralStateStorage
+    init(repository: GeneralStateStorage = GeneralStateRepository()) {
+        self.repository = repository
+    }
+    
     func start() {
-        currentRoute = AnyView(WelcomeScreen())
+        if repository[.tutorialIsDone] {
+            currentRoute = AnyView { WelcomeScreen() }
+        } else {
+            showGrid()
+        }
     }
     
     func didFinishSplashScreen() {
+        showGrid()
+    }
+    
+    fileprivate func showGrid() {
         currentRoute = AnyView {
             NavigationView {
                 GridView(photos: [], coordinator: FakeGridViewCoordinable())
