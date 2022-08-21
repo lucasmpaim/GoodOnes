@@ -40,6 +40,8 @@
 		F2C625C528B1B0E2004F8FC8 /* TutorialAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625C428B1B0E2004F8FC8 /* TutorialAnimations.swift */; };
 		F2C625C828B1B1DF004F8FC8 /* TutorialContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625C728B1B1DF004F8FC8 /* TutorialContentProvider.swift */; };
 		F2C625CA28B1B2AE004F8FC8 /* design-drawing.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C625C928B1B2AE004F8FC8 /* design-drawing.json */; };
+		F2C625CD28B1C701004F8FC8 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625CC28B1C701004F8FC8 /* WelcomeViewModel.swift */; };
+		F2C625CF28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625CE28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,8 @@
 		F2C625C428B1B0E2004F8FC8 /* TutorialAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialAnimations.swift; sourceTree = "<group>"; };
 		F2C625C728B1B1DF004F8FC8 /* TutorialContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentProvider.swift; sourceTree = "<group>"; };
 		F2C625C928B1B2AE004F8FC8 /* design-drawing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "design-drawing.json"; sourceTree = "<group>"; };
+		F2C625CC28B1C701004F8FC8 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
+		F2C625CE28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 		F2B2DB9228AF049700AA633B /* GoodOnesTests */ = {
 			isa = PBXGroup;
 			children = (
+				F2C625CB28B1C5E3004F8FC8 /* Welcome */,
 				F2C6258A28B1A1C7004F8FC8 /* RepositoryTests */,
 				F2B2DB9328AF049700AA633B /* GoodOnesTests.swift */,
 			);
@@ -217,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C6256528B16BC4004F8FC8 /* UseCases */,
+				F2C625CC28B1C701004F8FC8 /* WelcomeViewModel.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 		F2C6256528B16BC4004F8FC8 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				F2C625CE28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -411,6 +418,13 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		F2C625CB28B1C5E3004F8FC8 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -542,6 +556,8 @@
 				F2C625C328B1B0C2004F8FC8 /* TutorialModel.swift in Sources */,
 				F2C6259828B1ADEA004F8FC8 /* TutorialScreen.swift in Sources */,
 				F2C6259028B1A769004F8FC8 /* GeneralStateStorage.swift in Sources */,
+				F2C625CF28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift in Sources */,
+				F2C625CD28B1C701004F8FC8 /* WelcomeViewModel.swift in Sources */,
 				F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */,
 				F2C625A628B1B08D004F8FC8 /* TutorialViewModel.swift in Sources */,
 				F2C625C528B1B0E2004F8FC8 /* TutorialAnimations.swift in Sources */,
@@ -694,6 +710,7 @@
 				DEVELOPMENT_TEAM = 4588TAK2RM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You need this permission to do awesome things with your photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -723,6 +740,7 @@
 				DEVELOPMENT_TEAM = 4588TAK2RM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "You need this permission to do awesome things with your photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

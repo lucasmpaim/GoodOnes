@@ -7,8 +7,30 @@
 
 import SwiftUI
 
-struct WelcomeScreen: View {
+struct WelcomeScreen<VM: WelcomeViewModeling>: View {
+    
+    @ObservedObject var viewModel: VM
+    
     var body: some View {
+        switch viewModel.state {
+        case .idle: idle()
+        case .loading: LoadingView()
+        case .error(let error):
+            ErrorScreen(
+                errorMessage: error,
+                retryTitle: "Close",
+                showRetry: true,
+                retryAction: { [weak viewModel] in
+                    viewModel?.closeError()
+                }
+            )
+        }
+    }
+}
+
+fileprivate extension WelcomeScreen {
+    @ViewBuilder
+    func idle() -> some View {
         GeometryReader { proxy in
             ZStack {
                 backgroundImage(proxy: proxy)
@@ -33,7 +55,9 @@ fileprivate extension WelcomeScreen {
              .foregroundColor(.black)
             Spacer()
             HStack(alignment: .center) {
-                Button("Gallery Photos") {}
+                Button("Gallery Photos") {
+                    viewModel.selectGallery()
+                }
                     .buttonStyle(DefaultButtonStyle())
                 Button("Google Photos") {}
                     .buttonStyle(DefaultButtonStyle())
@@ -68,8 +92,16 @@ fileprivate extension WelcomeScreen {
 
 #if DEBUG
 struct WelcomeScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        WelcomeScreen()
+    final class FakeViewModel: WelcomeViewModeling {
+        var state: WelcomeViewState = .idle
+        func selectGallery() { }
+        func selectGPhotos() { }
+        func closeError() { }
     }
+    
+    static var previews: some View {
+        WelcomeScreen(viewModel: FakeViewModel())
+    }
+
 }
 #endif

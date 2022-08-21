@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ErrorScreen: View {
     
-    var errorMessage: String = "You don't see any error\nthis is just a mirage..."
-    
+    var errorMessage: String? = nil
+    var retryTitle: String = "Retry"
     @State var showRetry: Bool = false
     var retryAction: (() -> Void)? = nil
     
@@ -25,7 +25,7 @@ struct ErrorScreen: View {
                         .frame(maxWidth: size)
                         .aspectRatio(contentMode: .fit)
                         .padding()
-                    Text(errorMessage)
+                    Text(errorMessage ?? "You don't see any error\nthis is just a mirage...")
                         .foregroundColor(.white)
                     if showRetry {
                         retryButton(proxy: proxy)
@@ -40,7 +40,7 @@ struct ErrorScreen: View {
         Button {
             retryAction?()
         } label: {
-            Text("Retry")
+            Text(retryTitle)
                 .frame(minWidth: proxy.frame(in: .local).width * 0.8)
         }.buttonStyle(DefaultButtonStyle())
 

@@ -25,7 +25,7 @@ final class MainCoordinator : ObservableObject, Coordinator {
         }
     }
     
-    fileprivate func showGrid() {
+    fileprivate func enterOnGrid() {
         currentRoute = AnyView {
             NavigationView {
                 GridView(photos: [], coordinator: FakeGridViewCoordinable())
@@ -42,7 +42,7 @@ final class MainCoordinator : ObservableObject, Coordinator {
     }
     
     fileprivate func enterOnWelcome() {
-        currentRoute = AnyView { WelcomeScreen() }
+        currentRoute = AnyView { WelcomeScreen(viewModel: WelcomeViewModel(coorditor: self)) }
     }
     
 }
@@ -56,6 +56,12 @@ extension AnyView {
 extension MainCoordinator: TutorialCoordinable {
     func didFinishTutorial() {
         enterOnWelcome()
+    }
+}
+
+extension MainCoordinator: WelcomeViewCoordinable {
+    func selectGallery() {
+        enterOnGrid()
     }
 }
 
