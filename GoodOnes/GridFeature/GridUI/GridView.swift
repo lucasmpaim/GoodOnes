@@ -8,36 +8,51 @@
 import SwiftUI
 import Popovers
 
-protocol GridViewCoordinable {
-    func didSelectPhoto(id: Int) -> AnyView
+
+enum GridViewState {
+    case loading, error, idle
 }
 
-protocol GridViewModeling : ObservableObject {
+struct GridView<VM: GridViewModeling>: View {
     
-}
-
-struct GridView: View {
-    
-    @State var photos: [PhotoCell.Model]
     @State var isShowing: Bool = false
     @State var selectedDate = Date()
     @State private var selection: String? = nil
     
-    let coordinator: GridViewCoordinable
+    @ObservedObject var viewModel: VM
+    
+    @State var screenTitle: String = ""
     
     var body: some View {
+        switch viewModel.state {
+        case .loading: LoadingView()
+        case .error: ErrorScreen()
+        case .idle: idle()
+        }
+    }
+    
+    fileprivate func makeColumns() -> [GridItem] {
+        return Array(repeating: GridItem(.flexible()), count: 3)
+    }
+}
+
+fileprivate extension GridView {
+    @ViewBuilder
+    func idle() -> some View {
         ScrollView {
             LazyVGrid(columns: makeColumns()) {
-                ForEach(photos, id: \.self) { photo in
+                ForEach(viewModel.photos, id: \.self) { photo in
                     let cell = PhotoCell(model: photo)
-                        .aspectRatio(contentMode: .fit)
-                    NavigationLink(destination:  coordinator.didSelectPhoto(id: photo.id)) {
-                        cell
-                    }
+                        .frame(width: 80, alignment: .center)
+                        .aspectRatio(1, contentMode: .fill)
+                        .clipped()
+//                    NavigationLink(destination:  coordinator.didSelectPhoto(id: photo.id)) {
+                    cell
+//                    }
                 }
             }.padding()
         }
-        .navigationTitle("Doggos")
+        .navigationTitle(screenTitle)
         .toolbar {
             ToolbarItem(placement: .principal) {
                 Button {
@@ -62,8 +77,7 @@ struct GridView: View {
                     }
                 ) {
                     Templates.Container(
-                        arrowSide: .top(.centered),
-                        backgroundColor: .white
+                        arrowSide: .top(.centered)
                     ) {
                         DatePicker(
                             selection: $selectedDate,
@@ -77,33 +91,39 @@ struct GridView: View {
                     }
                 }
             }
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    self.viewModel.close()
+                } label: {
+                    Image(systemName: "arrow.backward.square")
+                        .rotationEffect(.degrees(180))
+                }
+            }
         }
-        .foregroundColor(.black)
-    }
-    
-    fileprivate func makeColumns() -> [GridItem] {
-        return Array(repeating: GridItem(.flexible()), count: 3)
     }
 }
 
 #if DEBUG
 struct GridView_Previews: PreviewProvider {
     
-    struct FakeCoordinator: GridViewCoordinable {
-        func didSelectPhoto(id: Int) -> AnyView {
-            AnyView(EmptyView())
+    final class FakeViewModel: GridViewModeling {
+        var state: GridViewState = .idle
+        @Published var photos: [PhotoCell.Model] = (0...99).map {
+            PhotoCell.Model(
+                id: $0,
+                image: UIImage(named: "grid-image-1")!,
+                name: "A dog \($0)!"
+            )
+        }
+        
+        func close() {
+            
         }
     }
     
     static var previews: some View {
         NavigationView {
-            GridView(photos: (0...99).map {
-                PhotoCell.Model(
-                    id: $0,
-                    image: UIImage(named: "grid-image-1")!.pngData()!,
-                    name: "A dog \($0)!"
-                )
-            }, coordinator: FakeCoordinator())
+            GridView(viewModel: FakeViewModel())
             .previewInterfaceOrientation(.portrait)
         }
     }

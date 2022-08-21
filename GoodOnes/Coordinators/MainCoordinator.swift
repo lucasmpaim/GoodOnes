@@ -7,12 +7,18 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 
 final class MainCoordinator : ObservableObject, Coordinator {
     @Published var currentRoute: AnyView = AnyView(EmptyView())
     
+    var currentRoutePublisher: Published<AnyView>.Publisher { $currentRoute }
+    
     private let repository: GeneralStateStorage
+    
+    private var childCoordinators = [(Coordinator, AnyCancellable)]()
+    
     init(repository: GeneralStateStorage = GeneralStateRepository()) {
         self.repository = repository
     }
@@ -26,11 +32,18 @@ final class MainCoordinator : ObservableObject, Coordinator {
     }
     
     fileprivate func enterOnGrid() {
-        currentRoute = AnyView {
-            NavigationView {
-                GridView(photos: [], coordinator: FakeGridViewCoordinable())
-            }
-        }
+        let coordinator = CameraRollCoordinator()
+        
+        let token = coordinator.objectWillChange
+            .sink(receiveCompletion: { _ in
+                self.childCoordinators.removeAll(where: { $0.0 is CameraRollCoordinator })
+                self.enterOnWelcome()
+            }, receiveValue: { [unowned coordinator] in
+                self.currentRoute = coordinator.currentRoute
+            })
+        
+        childCoordinators.append((coordinator, token))
+        coordinator.start()
     }
     
     fileprivate func enterOnTutorial() {
@@ -62,11 +75,5 @@ extension MainCoordinator: TutorialCoordinable {
 extension MainCoordinator: WelcomeViewCoordinable {
     func selectGallery() {
         enterOnGrid()
-    }
-}
-
-final class FakeGridViewCoordinable : GridViewCoordinable {
-    func didSelectPhoto(id: Int) -> AnyView {
-        AnyView(EmptyView())
     }
 }

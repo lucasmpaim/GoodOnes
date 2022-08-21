@@ -10,9 +10,10 @@ import SwiftUI
 struct PhotoCell: View {
     var model: Model
     var body: some View {
-        Image(uiImage: UIImage(data: model.image)!)
+        Image(uiImage: model.image)
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(contentMode: .fill)
+            .clipped()
             .background(
                 Color.black
                     .shadow(color: .black, radius: 3, x: 0, y: 5)
@@ -36,7 +37,7 @@ struct PhotoCell: View {
 extension PhotoCell {
     struct Model : Identifiable, Hashable {
         let id: Int
-        let image: Data
+        let image: UIImage
         let name: String
     }
 }
@@ -45,7 +46,7 @@ extension PhotoCell {
 struct PhotoCell_Previews: PreviewProvider {
     static var previewImage = PhotoCell.Model(
         id: 1,
-        image: UIImage(named: "grid-image-1")!.pngData()!,
+        image: UIImage(named: "grid-image-1")!,
         name: "A dog!"
     )
     static var previews: some View {

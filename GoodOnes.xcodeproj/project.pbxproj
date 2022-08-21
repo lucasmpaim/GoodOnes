@@ -42,6 +42,11 @@
 		F2C625CA28B1B2AE004F8FC8 /* design-drawing.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C625C928B1B2AE004F8FC8 /* design-drawing.json */; };
 		F2C625CD28B1C701004F8FC8 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625CC28B1C701004F8FC8 /* WelcomeViewModel.swift */; };
 		F2C625CF28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625CE28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift */; };
+		F2C625D228B28DFC004F8FC8 /* CameraRollCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625D128B28DFB004F8FC8 /* CameraRollCoordinator.swift */; };
+		F2C625D528B2A920004F8FC8 /* CameraRollGridViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625D428B2A920004F8FC8 /* CameraRollGridViewModel.swift */; };
+		F2C625D828B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625D728B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift */; };
+		F2C625DA28B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625D928B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift */; };
+		F2C625DD28B2D1EA004F8FC8 /* Publishers+ZipMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +95,11 @@
 		F2C625C928B1B2AE004F8FC8 /* design-drawing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "design-drawing.json"; sourceTree = "<group>"; };
 		F2C625CC28B1C701004F8FC8 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		F2C625CE28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionUseCase.swift; sourceTree = "<group>"; };
+		F2C625D128B28DFB004F8FC8 /* CameraRollCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRollCoordinator.swift; sourceTree = "<group>"; };
+		F2C625D428B2A920004F8FC8 /* CameraRollGridViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRollGridViewModel.swift; sourceTree = "<group>"; };
+		F2C625D728B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCameraAssetsUseCase.swift; sourceTree = "<group>"; };
+		F2C625D928B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCameraAssetImageUseCase.swift; sourceTree = "<group>"; };
+		F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+ZipMany.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +143,9 @@
 		F2B2DB8128AF048D00AA633B /* GoodOnes */ = {
 			isa = PBXGroup;
 			children = (
+				F2C625DB28B2D1D7004F8FC8 /* Extensions */,
+				F2C625D328B2A8FD004F8FC8 /* CameraRollGrid */,
+				F2C625D028B28DD0004F8FC8 /* Coordinators */,
 				F2C6258D28B1A736004F8FC8 /* CoreRepository */,
 				F2C6258528B19B60004F8FC8 /* CoreCoordinator */,
 				F2C6258428B1994F004F8FC8 /* Tutorial */,
@@ -315,7 +328,6 @@
 		F2C6258528B19B60004F8FC8 /* CoreCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				F2C6258628B19B7C004F8FC8 /* MainCoordinator.swift */,
 				F2C6258828B19B98004F8FC8 /* Coordinator.swift */,
 			);
 			path = CoreCoordinator;
@@ -423,6 +435,41 @@
 			children = (
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		F2C625D028B28DD0004F8FC8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F2C6258628B19B7C004F8FC8 /* MainCoordinator.swift */,
+				F2C625D128B28DFB004F8FC8 /* CameraRollCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F2C625D328B2A8FD004F8FC8 /* CameraRollGrid */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625D628B2B20A004F8FC8 /* UseCases */,
+				F2C625D428B2A920004F8FC8 /* CameraRollGridViewModel.swift */,
+			);
+			path = CameraRollGrid;
+			sourceTree = "<group>";
+		};
+		F2C625D628B2B20A004F8FC8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625D728B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift */,
+				F2C625D928B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		F2C625DB28B2D1D7004F8FC8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,7 +589,9 @@
 				F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */,
 				F2C6258728B19B7C004F8FC8 /* MainCoordinator.swift in Sources */,
 				F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */,
+				F2C625DA28B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift in Sources */,
 				F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */,
+				F2C625D228B28DFC004F8FC8 /* CameraRollCoordinator.swift in Sources */,
 				F2C6257728B17684004F8FC8 /* Also.swift in Sources */,
 				F2C625C828B1B1DF004F8FC8 /* TutorialContentProvider.swift in Sources */,
 				F2B2DBB028AF1A4400AA633B /* PhotoCell.swift in Sources */,
@@ -553,12 +602,15 @@
 				F2C6257928B17EB3004F8FC8 /* ErrorScreen.swift in Sources */,
 				F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */,
 				F2C6259428B1A79F004F8FC8 /* GeneralState.swift in Sources */,
+				F2C625D528B2A920004F8FC8 /* CameraRollGridViewModel.swift in Sources */,
 				F2C625C328B1B0C2004F8FC8 /* TutorialModel.swift in Sources */,
 				F2C6259828B1ADEA004F8FC8 /* TutorialScreen.swift in Sources */,
+				F2C625DD28B2D1EA004F8FC8 /* Publishers+ZipMany.swift in Sources */,
 				F2C6259028B1A769004F8FC8 /* GeneralStateStorage.swift in Sources */,
 				F2C625CF28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift in Sources */,
 				F2C625CD28B1C701004F8FC8 /* WelcomeViewModel.swift in Sources */,
 				F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */,
+				F2C625D828B2B22F004F8FC8 /* FetchCameraAssetsUseCase.swift in Sources */,
 				F2C625A628B1B08D004F8FC8 /* TutorialViewModel.swift in Sources */,
 				F2C625C528B1B0E2004F8FC8 /* TutorialAnimations.swift in Sources */,
 				F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */,

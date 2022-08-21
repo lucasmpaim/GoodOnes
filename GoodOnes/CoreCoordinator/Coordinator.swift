@@ -9,5 +9,6 @@ import Foundation
 import SwiftUI
 
 protocol Coordinator {
+//    var currentRoutePublisher: Published<AnyView>.Publisher { get }
     func start()
 }
