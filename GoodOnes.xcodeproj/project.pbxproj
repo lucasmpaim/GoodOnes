@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F210A1AE28B313F6009B21C4 /* EyeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AD28B313F6009B21C4 /* EyeButton.swift */; };
 		F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */; };
 		F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8428AF048D00AA633B /* ContentView.swift */; };
 		F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8628AF049700AA633B /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		F2C625E028B2DBAF004F8FC8 /* DateHelper in Frameworks */ = {isa = PBXBuildFile; productRef = F2C625DF28B2DBAF004F8FC8 /* DateHelper */; };
 		F2C625E328B2DBCC004F8FC8 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */; };
 		F2C625E628B30558004F8FC8 /* DelayTouches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E528B30558004F8FC8 /* DelayTouches.swift */; };
+		F2C625E928B30756004F8FC8 /* ImageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E828B30756004F8FC8 /* ImageDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F210A1AD28B313F6009B21C4 /* EyeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeButton.swift; sourceTree = "<group>"; };
 		F2B2DB7F28AF048D00AA633B /* GoodOnes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodOnes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesApp.swift; sourceTree = "<group>"; };
 		F2B2DB8428AF048D00AA633B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+ZipMany.swift"; sourceTree = "<group>"; };
 		F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		F2C625E528B30558004F8FC8 /* DelayTouches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTouches.swift; sourceTree = "<group>"; };
+		F2C625E828B30756004F8FC8 /* ImageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +279,7 @@
 				F2C6256728B16BF7004F8FC8 /* Loading.swift */,
 				F2C6257328B17365004F8FC8 /* Lottie.swift */,
 				F2C6257828B17EB3004F8FC8 /* ErrorScreen.swift */,
+				F210A1AD28B313F6009B21C4 /* EyeButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -481,11 +486,20 @@
 		F2C625E428B2F47C004F8FC8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F2C625E728B30736004F8FC8 /* ImageDetail */,
 				F2C625D328B2A8FD004F8FC8 /* CameraRollGrid */,
 				F2C6258428B1994F004F8FC8 /* Tutorial */,
 				F2C6254728B16B6E004F8FC8 /* Welcome */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F2C625E728B30736004F8FC8 /* ImageDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F2C625E828B30756004F8FC8 /* ImageDetail.swift */,
+			);
+			path = ImageDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -607,11 +621,13 @@
 				F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */,
 				F2C6258728B19B7C004F8FC8 /* MainCoordinator.swift in Sources */,
 				F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */,
+				F2C625E928B30756004F8FC8 /* ImageDetail.swift in Sources */,
 				F2C625DA28B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift in Sources */,
 				F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */,
 				F2C625E628B30558004F8FC8 /* DelayTouches.swift in Sources */,
 				F2C625D228B28DFC004F8FC8 /* CameraRollCoordinator.swift in Sources */,
 				F2C6257728B17684004F8FC8 /* Also.swift in Sources */,
+				F210A1AE28B313F6009B21C4 /* EyeButton.swift in Sources */,
 				F2C625C828B1B1DF004F8FC8 /* TutorialContentProvider.swift in Sources */,
 				F2B2DBB028AF1A4400AA633B /* PhotoCell.swift in Sources */,
 				F2C6257D28B1872D004F8FC8 /* WelcomeScreen.swift in Sources */,
