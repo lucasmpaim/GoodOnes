@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import CoreML
 
 final class CameraRollCoordinator : ObservableObject, Coordinator {
     
@@ -43,11 +44,12 @@ final class CameraRollCoordinator : ObservableObject, Coordinator {
 extension CameraRollCoordinator : GridViewCoordinable {
     func photoDetailDestination(
         loader: @escaping ImageDetailViewModel.ImageLoader,
-        meta: [ImageDetailMeta]
+        meta: [ImageDetailMeta],
+        photoId: String
     ) -> AnyView {
         return AnyView {
             ImageDetail(
-                viewModel: ImageDetailViewModel(loadFullImage: loader, meta: meta)
+                viewModel: ImageDetailViewModel(loadFullImage: loader, meta: meta, photoId: photoId)
             )
         }
     }

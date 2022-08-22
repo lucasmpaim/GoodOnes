@@ -56,6 +56,7 @@
 		F2CE420928B33EAC001BDB06 /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE420828B33EAC001BDB06 /* ImageDetailViewModel.swift */; };
 		F2CE421028B341EA001BDB06 /* ImageClassificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE420F28B341EA001BDB06 /* ImageClassificationUseCase.swift */; };
 		F2CE421228B350D4001BDB06 /* Numeric+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE421128B350D4001BDB06 /* Numeric+Formatter.swift */; };
+		F2CE421528B357AA001BDB06 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = F2CE421428B357AA001BDB06 /* ToastUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2CE421528B357AA001BDB06 /* ToastUI in Frameworks */,
 				F2C625E028B2DBAF004F8FC8 /* DateHelper in Frameworks */,
 				F2B2DBB528AF383000AA633B /* Popovers in Frameworks */,
 				F2C6257228B16DD3004F8FC8 /* Lottie in Frameworks */,
@@ -550,6 +552,7 @@
 				F2B2DBB428AF383000AA633B /* Popovers */,
 				F2C6257128B16DD3004F8FC8 /* Lottie */,
 				F2C625DF28B2DBAF004F8FC8 /* DateHelper */,
+				F2CE421428B357AA001BDB06 /* ToastUI */,
 			);
 			productName = GoodOnes;
 			productReference = F2B2DB7F28AF048D00AA633B /* GoodOnes.app */;
@@ -605,6 +608,7 @@
 				F2B2DBB328AF383000AA633B /* XCRemoteSwiftPackageReference "Popovers" */,
 				F2C6257028B16DD3004F8FC8 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				F2C625DE28B2DBAF004F8FC8 /* XCRemoteSwiftPackageReference "DateHelper" */,
+				F2CE421328B357AA001BDB06 /* XCRemoteSwiftPackageReference "ToastUI" */,
 			);
 			productRefGroup = F2B2DB8028AF048D00AA633B /* Products */;
 			projectDirPath = "";
@@ -976,6 +980,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		F2CE421328B357AA001BDB06 /* XCRemoteSwiftPackageReference "ToastUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/quanshousio/ToastUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -993,6 +1005,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F2C625DE28B2DBAF004F8FC8 /* XCRemoteSwiftPackageReference "DateHelper" */;
 			productName = DateHelper;
+		};
+		F2CE421428B357AA001BDB06 /* ToastUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2CE421328B357AA001BDB06 /* XCRemoteSwiftPackageReference "ToastUI" */;
+			productName = ToastUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import ToastUI
 
 struct ImageDetailMeta {
     let title: String
@@ -23,6 +23,8 @@ enum ImageDetailState {
 struct ImageDetail<VM: ImageDetailViewModeling>: View {
     
     @ObservedObject var viewModel: VM
+    
+    @State var showingCopyToast: Bool = false
     
     //MARK: - Drawing properties
     @State var isDrawing: Bool = false
@@ -101,6 +103,22 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
                     }
                 }
             })
+            ToolbarItem(placement: .navigationBarTrailing, content: {
+                Button {
+                    self.viewModel.copyPhotoIdToPasteboard()
+                    showingCopyToast = true
+                } label: {
+                    Image(systemName: "doc.on.doc.fill")
+                }
+            })
+        })
+        .toast(isPresented: $showingCopyToast, dismissAfter: 2, content: {
+            ToastView {
+                HStack {
+                    Image(systemName: "doc.on.doc")
+                    Text("Copied to Clipboard")
+                }.padding()
+            }
         })
     }
     
@@ -141,8 +159,8 @@ struct ImageDetail_Previews: PreviewProvider {
         @Published var state: ImageDetailState = .idle(UIImage(named: "grid-image-1")!)
         
         func load() { }
-        
         func classify() { }
+        func copyPhotoIdToPasteboard() { }
     }
     
     static var previews: some View {

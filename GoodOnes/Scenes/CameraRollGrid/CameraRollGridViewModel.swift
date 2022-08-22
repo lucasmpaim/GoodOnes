@@ -14,7 +14,8 @@ import Photos
 protocol GridViewCoordinable: AnyObject {
     func photoDetailDestination(
         loader: @escaping ImageDetailViewModel.ImageLoader,
-        meta: [ImageDetailMeta]
+        meta: [ImageDetailMeta],
+        photoId: String
     ) -> AnyView
     func close()
 }
@@ -79,7 +80,7 @@ final class CameraRollGridViewModel: GridViewModeling {
         }, meta: [
             .init(title: "Creation Date", description: self.assets[index].creationDate?.fullDate ?? "-"),
             .init(title: "Modify Date", description: self.assets[index].modificationDate?.fullDate ?? "-")
-        ])
+        ], photoId: self.assets[index].localIdentifier)
     }
     
     func nextPage() {

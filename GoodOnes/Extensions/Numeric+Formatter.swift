@@ -15,6 +15,6 @@ extension Numeric {
         formatter.maximumIntegerDigits = 3
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
-        return formatter.string(for: self * 100)
+        return formatter.string(for: self)
     }
 }

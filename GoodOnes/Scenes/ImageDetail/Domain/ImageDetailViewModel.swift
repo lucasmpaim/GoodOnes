@@ -16,6 +16,7 @@ protocol ImageDetailViewModeling: ObservableObject {
     
     func load()
     func classify()
+    func copyPhotoIdToPasteboard()
 }
 
 final class ImageDetailViewModel: ImageDetailViewModeling {
@@ -33,15 +34,21 @@ final class ImageDetailViewModel: ImageDetailViewModeling {
     
     private var isPredicting: Bool = false
     private var hasSucessDonePrediction: Bool = false
+    private let photoId: String
+    private var pasteboard: Pasteboard
     
     init(
         loadFullImage: @escaping ImageLoader,
         meta: [ImageDetailMeta],
-        classifyImageUseCase: ImageClassificationUseCase = VisionImageClassificationUseCaseImpl()
+        photoId: String,
+        classifyImageUseCase: ImageClassificationUseCase = VisionImageClassificationUseCaseImpl(),
+        pasteboard: Pasteboard = UIPasteboard.general
     ) {
         self.loadFullImage = loadFullImage
         self.classifyImageUseCase = classifyImageUseCase
+        self.photoId = photoId
         self.meta = meta
+        self.pasteboard = pasteboard
     }
     
     func load() {
@@ -82,8 +89,15 @@ final class ImageDetailViewModel: ImageDetailViewModeling {
                 self.meta.append(contentsOf: predictions.map { .init(title: $0.label, description: $0.confidence) })
             })
             .store(in: &cancellables)
-        
+    }
+    
+    func copyPhotoIdToPasteboard() {
+        pasteboard.string = photoId
     }
 }
 
+protocol Pasteboard {
+    var string: String? { get set }
+}
 
+extension UIPasteboard : Pasteboard { }
