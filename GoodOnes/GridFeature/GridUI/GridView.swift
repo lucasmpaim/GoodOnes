@@ -13,11 +13,36 @@ enum GridViewState {
     case loading, error, idle
 }
 
+enum CellSize : Int, CaseIterable {
+    case xSmall = 0, small = 1, medium = 2, high = 3
+    
+    var cellSize: CGFloat {
+        switch self {
+        case .xSmall:
+            return 25
+        case .small:
+            return 40
+        case .medium:
+            return 80
+        case .high:
+            return 180
+        }
+    }
+}
+
+enum PitchDirection {
+    case open, close
+}
+
 struct GridView<VM: GridViewModeling>: View {
     
     @State private var selection: String? = nil
     @ObservedObject var viewModel: VM
     @State var screenTitle: String = ""
+    
+    @State var itemSize: CellSize = .medium
+    @State var direction: PitchDirection = .close
+    @State var linksEnabled: Bool = true
     
     var body: some View {
         switch viewModel.state {
@@ -28,7 +53,24 @@ struct GridView<VM: GridViewModeling>: View {
     }
     
     fileprivate func makeColumns() -> [GridItem] {
-        return Array(repeating: GridItem(.flexible()), count: 3)
+        switch itemSize {
+        case .small:
+            return [GridItem(.adaptive(minimum: itemSize.cellSize, maximum: itemSize.cellSize))]
+        case .medium:
+            return Array(repeating: GridItem(.flexible()), count: 3)
+        default:
+            return [GridItem(.adaptive(minimum: itemSize.cellSize, maximum: itemSize.cellSize))]
+        }
+        
+    }
+    
+    func updateCellSize() {
+        withAnimation {
+            let offset = direction == .close ? -1 : 1
+            let maxOffset = CellSize.allCases.map { $0.rawValue }.max()!
+            let newValue = min(max(0, itemSize.rawValue + offset), maxOffset)
+            self.itemSize = .init(rawValue: newValue) ?? .medium
+        }
     }
 }
 
@@ -39,20 +81,36 @@ fileprivate extension GridView {
             LazyVGrid(columns: makeColumns()) {
                 ForEach(Array(viewModel.photos.enumerated()), id: \.offset) { (offset, element) in
                     let cell = PhotoCell(model: element)
-                        .frame(width: 120, alignment: .center)
+                        .frame(width: itemSize.cellSize, alignment: .center)
                         .aspectRatio(1, contentMode: .fill)
                         .clipped()
+                        
                     NavigationLink(destination: viewModel.photoDetailDestination(at: offset)) {
                         cell
-                    }.onAppear(perform: {
+                    }
+                    .onAppear(perform: {
                         if(Float(offset) >= Float(viewModel.photos.count) * 0.8) {
                             viewModel.nextPage()
                         }
                     })
+                    .disabled(!linksEnabled)
+                    
                     
                 }
-            }.padding()
+            }
+            .padding()
         }
+        .delaysTouches(for: 0.3)
+        .simultaneousGesture(MagnificationGesture(minimumScaleDelta: 0.3)
+            .onChanged({ val in
+                linksEnabled = false
+                direction = val <= 1.3 ? .close : .open
+            })
+            .onEnded { val in
+                linksEnabled = true
+                self.updateCellSize()
+            }
+        )
         .navigationTitle(screenTitle)
         .toolbar {
             ToolbarItem(placement: .principal) {

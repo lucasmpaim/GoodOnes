@@ -49,6 +49,7 @@
 		F2C625DD28B2D1EA004F8FC8 /* Publishers+ZipMany.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */; };
 		F2C625E028B2DBAF004F8FC8 /* DateHelper in Frameworks */ = {isa = PBXBuildFile; productRef = F2C625DF28B2DBAF004F8FC8 /* DateHelper */; };
 		F2C625E328B2DBCC004F8FC8 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */; };
+		F2C625E628B30558004F8FC8 /* DelayTouches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E528B30558004F8FC8 /* DelayTouches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		F2C625D928B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCameraAssetImageUseCase.swift; sourceTree = "<group>"; };
 		F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+ZipMany.swift"; sourceTree = "<group>"; };
 		F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
+		F2C625E528B30558004F8FC8 /* DelayTouches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTouches.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				F2C6258228B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift */,
+				F2C625E528B30558004F8FC8 /* DelayTouches.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */,
 				F2C625DA28B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift in Sources */,
 				F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */,
+				F2C625E628B30558004F8FC8 /* DelayTouches.swift in Sources */,
 				F2C625D228B28DFC004F8FC8 /* CameraRollCoordinator.swift in Sources */,
 				F2C6257728B17684004F8FC8 /* Also.swift in Sources */,
 				F2C625C828B1B1DF004F8FC8 /* TutorialContentProvider.swift in Sources */,
