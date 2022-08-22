@@ -13,6 +13,7 @@ struct ImageDetailMeta {
     let description: String
 }
 
+
 enum ImageDetailState {
     case loading, idle(UIImage), error
 }
@@ -33,9 +34,8 @@ struct ImageDetail: View {
     
     //MARK: - Drawing properties
     @State var isDrawing: Bool = true
-    @State var newShape: Bool = true
-    @State var lines: [[CGPoint]] = []
-    @State var lineColor: Color = .black
+    @State var lines: [Line] = []
+
     
     var body: some View {
         switch state {
@@ -44,34 +44,11 @@ struct ImageDetail: View {
         case .idle(let uIImage):
             ZStack {
                 idle(image: uIImage)
-                if isDrawing {
-                    Canvas { context, size in
-                        for (offset, line) in lines.enumerated() {
-                            var path = Path()
-                            path.addLines(line)
-                            context.stroke(path, with: .color(.red), lineWidth: 2)
-                        }
-                    }.gesture(drawGesture())
-                }
+                Drawing(isDrawing: $isDrawing, lines: $lines)
             }
         case .error:
             ErrorScreen()
         }
-    }
-    
-    fileprivate func drawGesture() -> _EndedGesture<_ChangedGesture<DragGesture>> {
-        return DragGesture(minimumDistance: .zero)
-            .onChanged { value in
-                print(value)
-                if newShape {
-                    newShape = false
-                    lines.append([])
-                }
-                lines[lines.count - 1].append(value.location)
-            }
-            .onEnded { _ in
-                newShape = true
-            }
     }
     
     @ViewBuilder
@@ -80,9 +57,6 @@ struct ImageDetail: View {
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .gesture(
-                    drawGesture()
-                )
             if isShowingMeta {
                 VStack {
                     metaView()

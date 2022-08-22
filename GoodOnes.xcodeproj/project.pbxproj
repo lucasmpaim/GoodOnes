@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F210A1AE28B313F6009B21C4 /* EyeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AD28B313F6009B21C4 /* EyeButton.swift */; };
+		F210A1B028B33599009B21C4 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AF28B33599009B21C4 /* Drawing.swift */; };
 		F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */; };
 		F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8428AF048D00AA633B /* ContentView.swift */; };
 		F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8628AF049700AA633B /* Assets.xcassets */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		F210A1AD28B313F6009B21C4 /* EyeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeButton.swift; sourceTree = "<group>"; };
+		F210A1AF28B33599009B21C4 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		F2B2DB7F28AF048D00AA633B /* GoodOnes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodOnes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesApp.swift; sourceTree = "<group>"; };
 		F2B2DB8428AF048D00AA633B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				F2C6257328B17365004F8FC8 /* Lottie.swift */,
 				F2C6257828B17EB3004F8FC8 /* ErrorScreen.swift */,
 				F210A1AD28B313F6009B21C4 /* EyeButton.swift */,
+				F210A1AF28B33599009B21C4 /* Drawing.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -650,6 +653,7 @@
 				F2C625C528B1B0E2004F8FC8 /* TutorialAnimations.swift in Sources */,
 				F2C625E328B2DBCC004F8FC8 /* Date+Formatter.swift in Sources */,
 				F2C6259228B1A77F004F8FC8 /* GeneralStateRepository.swift in Sources */,
+				F210A1B028B33599009B21C4 /* Drawing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
