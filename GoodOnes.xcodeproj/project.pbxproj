@@ -53,6 +53,9 @@
 		F2C625E328B2DBCC004F8FC8 /* Date+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */; };
 		F2C625E628B30558004F8FC8 /* DelayTouches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E528B30558004F8FC8 /* DelayTouches.swift */; };
 		F2C625E928B30756004F8FC8 /* ImageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625E828B30756004F8FC8 /* ImageDetail.swift */; };
+		F2CE420928B33EAC001BDB06 /* ImageDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE420828B33EAC001BDB06 /* ImageDetailViewModel.swift */; };
+		F2CE421028B341EA001BDB06 /* ImageClassificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE420F28B341EA001BDB06 /* ImageClassificationUseCase.swift */; };
+		F2CE421228B350D4001BDB06 /* Numeric+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE421128B350D4001BDB06 /* Numeric+Formatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,9 @@
 		F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatter.swift"; sourceTree = "<group>"; };
 		F2C625E528B30558004F8FC8 /* DelayTouches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayTouches.swift; sourceTree = "<group>"; };
 		F2C625E828B30756004F8FC8 /* ImageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetail.swift; sourceTree = "<group>"; };
+		F2CE420828B33EAC001BDB06 /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
+		F2CE420F28B341EA001BDB06 /* ImageClassificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationUseCase.swift; sourceTree = "<group>"; };
+		F2CE421128B350D4001BDB06 /* Numeric+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Formatter.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F210A1B128B33E55009B21C4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				F2CE420E28B34186001BDB06 /* UseCases */,
+				F2CE420828B33EAC001BDB06 /* ImageDetailViewModel.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		F2B2DB7628AF048D00AA633B = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +497,7 @@
 			children = (
 				F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */,
 				F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */,
+				F2CE421128B350D4001BDB06 /* Numeric+Formatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -500,9 +516,18 @@
 		F2C625E728B30736004F8FC8 /* ImageDetail */ = {
 			isa = PBXGroup;
 			children = (
+				F210A1B128B33E55009B21C4 /* Domain */,
 				F2C625E828B30756004F8FC8 /* ImageDetail.swift */,
 			);
 			path = ImageDetail;
+			sourceTree = "<group>";
+		};
+		F2CE420E28B34186001BDB06 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F2CE420F28B341EA001BDB06 /* ImageClassificationUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -625,6 +650,8 @@
 				F2C6258728B19B7C004F8FC8 /* MainCoordinator.swift in Sources */,
 				F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */,
 				F2C625E928B30756004F8FC8 /* ImageDetail.swift in Sources */,
+				F2CE421228B350D4001BDB06 /* Numeric+Formatter.swift in Sources */,
+				F2CE421028B341EA001BDB06 /* ImageClassificationUseCase.swift in Sources */,
 				F2C625DA28B2B9F8004F8FC8 /* FetchCameraAssetImageUseCase.swift in Sources */,
 				F2C6258328B192A1004F8FC8 /* CornerRadius+SpecificCorners.swift in Sources */,
 				F2C625E628B30558004F8FC8 /* DelayTouches.swift in Sources */,
@@ -632,6 +659,7 @@
 				F2C6257728B17684004F8FC8 /* Also.swift in Sources */,
 				F210A1AE28B313F6009B21C4 /* EyeButton.swift in Sources */,
 				F2C625C828B1B1DF004F8FC8 /* TutorialContentProvider.swift in Sources */,
+				F2CE420928B33EAC001BDB06 /* ImageDetailViewModel.swift in Sources */,
 				F2B2DBB028AF1A4400AA633B /* PhotoCell.swift in Sources */,
 				F2C6257D28B1872D004F8FC8 /* WelcomeScreen.swift in Sources */,
 				F2C6257428B17365004F8FC8 /* Lottie.swift in Sources */,

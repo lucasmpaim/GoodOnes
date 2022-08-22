@@ -12,7 +12,10 @@ import Photos
 
 
 protocol GridViewCoordinable: AnyObject {
-    func photoDetailDestination() -> AnyView
+    func photoDetailDestination(
+        loader: @escaping ImageDetailViewModel.ImageLoader,
+        meta: [ImageDetailMeta]
+    ) -> AnyView
     func close()
 }
 
@@ -65,7 +68,18 @@ final class CameraRollGridViewModel: GridViewModeling {
     }
     
     func photoDetailDestination(at index: Int) -> AnyView {
-        return coordinator.photoDetailDestination()
+        return coordinator.photoDetailDestination(loader: {
+            return self.fetchAssetImageUseCase.fetchImage(
+                .init(
+                    asset: self.assets[index],
+                    targetSize: UIScreen.main.bounds.size,
+                    imageType: .full
+                )
+            )
+        }, meta: [
+            .init(title: "Creation Date", description: self.assets[index].creationDate?.fullDate ?? "-"),
+            .init(title: "Modify Date", description: self.assets[index].modificationDate?.fullDate ?? "-")
+        ])
     }
     
     func nextPage() {
@@ -92,7 +106,9 @@ fileprivate extension CameraRollGridViewModel {
     
     func loadThumbnails(from assets: [PHAsset]) -> AnyPublisher<[(UIImage, PHAsset)], ImageLoadError> {
         let requests = assets.map { asset in
-            self.fetchAssetImageUseCase.fetchImage(.init(asset: asset, targetSize: .init(width: 120, height: 120)))
+            self.fetchAssetImageUseCase.fetchImage(
+                .init(asset: asset, targetSize: .init(width: 120, height: 120), imageType: .thumbnail)
+            )
                 .flatMap { Just(($0, asset)) }
                 .eraseToAnyPublisher()
         }

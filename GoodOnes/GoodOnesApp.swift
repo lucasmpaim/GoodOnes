@@ -18,19 +18,7 @@ struct GoodOnesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            #if DEBUG
-            NavigationView {
-                ImageDetail(
-                    meta: [
-                        .init(title: "teste", description: "teste"),
-                        .init(title: "teste", description: "teste")
-                    ],
-                    state: .idle(UIImage(systemName: "square.and.arrow.down.fill")!)
-                )
-            }
-            #else
             mainCoordinator.currentRoute
-            #endif
         }
     }
 

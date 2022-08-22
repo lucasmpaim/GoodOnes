@@ -36,7 +36,7 @@ struct Drawing: View {
     fileprivate func drawGesture() -> _EndedGesture<_ChangedGesture<DragGesture>> {
         return DragGesture(minimumDistance: .zero)
             .onChanged { value in
-                print(value)
+                guard isDrawing else { return }
                 if newShape {
                     newShape = false
                     lines.append(Line())

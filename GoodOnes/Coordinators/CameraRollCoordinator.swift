@@ -41,8 +41,15 @@ final class CameraRollCoordinator : ObservableObject, Coordinator {
 }
 
 extension CameraRollCoordinator : GridViewCoordinable {
-    func photoDetailDestination() -> AnyView {
-        return AnyView { Color.accentColor }
+    func photoDetailDestination(
+        loader: @escaping ImageDetailViewModel.ImageLoader,
+        meta: [ImageDetailMeta]
+    ) -> AnyView {
+        return AnyView {
+            ImageDetail(
+                viewModel: ImageDetailViewModel(loadFullImage: loader, meta: meta)
+            )
+        }
     }
     
     func close() { self.end() }

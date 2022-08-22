@@ -18,37 +18,37 @@ enum ImageDetailState {
     case loading, idle(UIImage), error
 }
 
-protocol ImageDetailViewModeling: ObservableObject {
-    var meta: [ImageDetailMeta] { get }
-    var state: ImageDetailState { get }
-}
 
-struct ImageDetail: View {
+
+struct ImageDetail<VM: ImageDetailViewModeling>: View {
     
-    @State var isShowingMeta: Bool = false
-    @State var meta: [ImageDetailMeta] = []
-    
-    @State var image: UIImage? = nil
-    
-    @State var state: ImageDetailState = .loading
+    @ObservedObject var viewModel: VM
     
     //MARK: - Drawing properties
-    @State var isDrawing: Bool = true
+    @State var isDrawing: Bool = false
     @State var lines: [Line] = []
-
     
     var body: some View {
-        switch state {
-        case .loading:
-            LoadingView()
-        case .idle(let uIImage):
-            ZStack {
-                idle(image: uIImage)
-                Drawing(isDrawing: $isDrawing, lines: $lines)
+        Group {
+            switch viewModel.state {
+            case .loading:
+                LoadingView()
+            case .idle(let uIImage):
+                ZStack {
+                    idle(image: uIImage)
+                    Drawing(isDrawing: $isDrawing, lines: $lines)
+                }
+            case .error:
+                ErrorScreen(
+                    showRetry: true,
+                    retryAction: {
+                        self.viewModel.load()
+                    }
+                )
             }
-        case .error:
-            ErrorScreen()
-        }
+        }.onAppear(perform: {
+            viewModel.load()
+        })
     }
     
     @ViewBuilder
@@ -57,10 +57,8 @@ struct ImageDetail: View {
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-            if isShowingMeta {
-                VStack {
-                    metaView()
-                }
+            if viewModel.isShowingMeta {
+                metaView()
             }
         }
         .navigationTitle("Detail")
@@ -68,14 +66,14 @@ struct ImageDetail: View {
             ToolbarItem(placement: isDrawing ? .navigationBarLeading : .navigationBarTrailing, content: {
                 Button {
                     isDrawing.toggle()
-                    isShowingMeta = false
+                    viewModel.isShowingMeta = false
                 } label: {
                     Image(systemName: isDrawing ? "stop.circle" : "pencil.tip.crop.circle")
                 }
             })
             ToolbarItem(placement: .navigationBarTrailing, content: {
                 if !isDrawing {
-                    EyeButton(isShowing: $isShowingMeta)
+                    EyeButton(isShowing: $viewModel.isShowingMeta)
                 }
             })
             ToolbarItem(placement: .navigationBarTrailing, content: {
@@ -96,14 +94,9 @@ struct ImageDetail: View {
             })
             ToolbarItem(placement: .navigationBarLeading, content: {
                 if !isDrawing {
-                    Button { } label: {
-                        Image(systemName: "qrcode.viewfinder")
-                    }
-                }
-            })
-            ToolbarItem(placement: .navigationBarLeading, content: {
-                if !isDrawing {
-                    Button { } label: {
+                    Button {
+                        self.viewModel.classify()
+                    } label: {
                         Image(systemName: "doc.text.image.fill")
                     }
                 }
@@ -113,40 +106,48 @@ struct ImageDetail: View {
     
     @ViewBuilder
     fileprivate func metaView() -> some View {
-        Spacer()
-            .background(Color.clear)
-        ScrollView {
+        VStack {
+            Spacer()
+                .background(Color.clear)
             VStack(spacing: 15) {
-                ForEach(Array(meta.enumerated()), id: \.offset) { (offset, element) in
+                ForEach(Array(viewModel.meta.enumerated()), id: \.offset) { (offset, element) in
                     HStack(alignment: .top) {
-                        let needTopPadding = offset == 0
+                        let needTopOffset = offset == .zero
                         Text(element.title)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(needTopPadding ? [.top, .leading] : [.leading])
+                            .padding(needTopOffset ? [.top, .leading] : .leading)
+                            .frame(alignment: .leading)
                             .font(Font.body.bold())
                         Text(element.description)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
-                            .padding(needTopPadding ? [.top, .trailing] : [.trailing])
-                    }
-                    .frame(maxWidth: .infinity,maxHeight: .infinity)
+                            .padding(needTopOffset ? [.top, .trailing] : .trailing)
+                            .frame(alignment: .trailing)
+                    }.frame(maxWidth: .infinity)
                 }
             }
+            .background(Color.white)
+            .aspectRatio(contentMode: .fit)
         }
-        .aspectRatio(contentMode: .fit)
-        .transition(.slide)
     }
     
 }
 
 struct ImageDetail_Previews: PreviewProvider {
+    
+    final class StubViewModel: ImageDetailViewModeling {
+        @Published var isShowingMeta: Bool = false
+        @Published var meta: [ImageDetailMeta] = [
+            .init(title: "Created At", description: Date().fullDate ?? ""),
+            .init(title: "Some Title", description: "Some description")
+        ]
+        @Published var state: ImageDetailState = .idle(UIImage(named: "grid-image-1")!)
+        
+        func load() { }
+        
+        func classify() { }
+    }
+    
     static var previews: some View {
         NavigationView {
-            ImageDetail(meta: [
-                .init(title: "Created At", description: Date().fullDate ?? ""),
-                .init(title: "Some Title", description: "Some description")
-            ],
-            state: .idle(UIImage(named: "grid-image-1")!)
-            )
+            ImageDetail(viewModel: StubViewModel())
         }
     }
 }

@@ -10,9 +10,14 @@ import Combine
 import Photos
 import UIKit
 
+enum CameraAssetImageType {
+    case thumbnail, full
+}
+
 struct FetchCameraAssetImageRequest {
     let asset: PHAsset
     let targetSize: CGSize
+    let imageType: CameraAssetImageType
 }
 
 enum ImageLoadError : Error {
@@ -31,11 +36,12 @@ final class FetchCameraAssetImageUseCaseImpl : FetchCameraAssetImageUseCase {
                 targetSize: request.targetSize,
                 contentMode: .aspectFill,
                 options: makeOptionsFor(request),
-                resultHandler: { image, _ in
+                resultHandler: { image, info in
                     guard let image = image else {
                         promise(.failure(.cantLoadImage))
                         return
                     }
+                    
                     promise(.success(image))
                 }
             )
@@ -51,6 +57,7 @@ fileprivate extension FetchCameraAssetImageUseCaseImpl {
         options.resizeMode = .fast
         options.isNetworkAccessAllowed = true
         options.isSynchronous = false
+        options.deliveryMode = request.imageType == .thumbnail ? .fastFormat : .highQualityFormat
         return options
     }
 }
