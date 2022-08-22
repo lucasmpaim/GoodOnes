@@ -25,7 +25,7 @@ enum CellSize : Int, CaseIterable {
         case .medium:
             return 80
         case .high:
-            return 180
+            return UIScreen.main.bounds.width * 0.8
         }
     }
 }
@@ -54,8 +54,6 @@ struct GridView<VM: GridViewModeling>: View {
     
     fileprivate func makeColumns() -> [GridItem] {
         switch itemSize {
-        case .small:
-            return [GridItem(.adaptive(minimum: itemSize.cellSize, maximum: itemSize.cellSize))]
         case .medium:
             return Array(repeating: GridItem(.flexible()), count: 3)
         default:
@@ -101,7 +99,7 @@ fileprivate extension GridView {
             .padding()
         }
         .delaysTouches(for: 0.3)
-        .simultaneousGesture(MagnificationGesture(minimumScaleDelta: 0.3)
+        .highPriorityGesture(MagnificationGesture(minimumScaleDelta: 0.3)
             .onChanged({ val in
                 linksEnabled = false
                 direction = val <= 1.3 ? .close : .open

@@ -25,10 +25,15 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
     @ObservedObject var viewModel: VM
     
     @State var showingCopyToast: Bool = false
+    @State var showingSaveToast: Bool = false
     
     //MARK: - Drawing properties
     @State var isDrawing: Bool = false
     @State var lines: [Line] = []
+    
+    var drawingView: some View {
+        Drawing(isDrawing: $isDrawing, lines: $lines)
+    }
     
     var body: some View {
         Group {
@@ -38,7 +43,7 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
             case .idle(let uIImage):
                 ZStack {
                     idle(image: uIImage)
-                    Drawing(isDrawing: $isDrawing, lines: $lines)
+                    drawingView
                 }
             case .error:
                 ErrorScreen(
@@ -58,7 +63,7 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
         ZStack {
             Image(uiImage: image)
                 .resizable()
-                .aspectRatio(contentMode: .fill)
+                .aspectRatio(contentMode: .fit)
             if viewModel.isShowingMeta {
                 metaView()
             }
@@ -80,7 +85,12 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
             })
             ToolbarItem(placement: .navigationBarTrailing, content: {
                 if isDrawing {
-                    Button { } label: {
+                    Button {
+                        let newImage = drawingView.frame(rect: UIScreen.main.bounds)
+                            .snapshot()
+                        viewModel.savePhotoWithDraw(canvasImage: newImage)
+                        showingSaveToast = true
+                    } label: {
                         Image(systemName: "square.and.arrow.down.fill")
                     }
                 }
@@ -117,6 +127,14 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
                 HStack {
                     Image(systemName: "doc.on.doc")
                     Text("Copied to Clipboard")
+                }.padding()
+            }
+        })
+        .toast(isPresented: $showingSaveToast, dismissAfter: 2, content: {
+            ToastView {
+                HStack {
+                    Image(systemName: "photo.on.rectangle.angled")
+                    Text("Saved in your gallery!")
                 }.padding()
             }
         })
@@ -161,6 +179,7 @@ struct ImageDetail_Previews: PreviewProvider {
         func load() { }
         func classify() { }
         func copyPhotoIdToPasteboard() { }
+        func savePhotoWithDraw(canvasImage: UIImage) { }
     }
     
     static var previews: some View {

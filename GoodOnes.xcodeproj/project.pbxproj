@@ -57,6 +57,8 @@
 		F2CE421028B341EA001BDB06 /* ImageClassificationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE420F28B341EA001BDB06 /* ImageClassificationUseCase.swift */; };
 		F2CE421228B350D4001BDB06 /* Numeric+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE421128B350D4001BDB06 /* Numeric+Formatter.swift */; };
 		F2CE421528B357AA001BDB06 /* ToastUI in Frameworks */ = {isa = PBXBuildFile; productRef = F2CE421428B357AA001BDB06 /* ToastUI */; };
+		F2CE421728B35A37001BDB06 /* View+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE421628B35A37001BDB06 /* View+Snapshot.swift */; };
+		F2CE421928B35BD7001BDB06 /* SaveImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2CE421828B35BD7001BDB06 /* SaveImageUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		F2CE420828B33EAC001BDB06 /* ImageDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewModel.swift; sourceTree = "<group>"; };
 		F2CE420F28B341EA001BDB06 /* ImageClassificationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageClassificationUseCase.swift; sourceTree = "<group>"; };
 		F2CE421128B350D4001BDB06 /* Numeric+Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+Formatter.swift"; sourceTree = "<group>"; };
+		F2CE421628B35A37001BDB06 /* View+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Snapshot.swift"; sourceTree = "<group>"; };
+		F2CE421828B35BD7001BDB06 /* SaveImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImageUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +504,7 @@
 				F2C625DC28B2D1EA004F8FC8 /* Publishers+ZipMany.swift */,
 				F2C625E228B2DBCC004F8FC8 /* Date+Formatter.swift */,
 				F2CE421128B350D4001BDB06 /* Numeric+Formatter.swift */,
+				F2CE421628B35A37001BDB06 /* View+Snapshot.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -528,6 +533,7 @@
 			isa = PBXGroup;
 			children = (
 				F2CE420F28B341EA001BDB06 /* ImageClassificationUseCase.swift */,
+				F2CE421828B35BD7001BDB06 /* SaveImageUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -675,8 +681,10 @@
 				F2C625D528B2A920004F8FC8 /* CameraRollGridViewModel.swift in Sources */,
 				F2C625C328B1B0C2004F8FC8 /* TutorialModel.swift in Sources */,
 				F2C6259828B1ADEA004F8FC8 /* TutorialScreen.swift in Sources */,
+				F2CE421728B35A37001BDB06 /* View+Snapshot.swift in Sources */,
 				F2C625DD28B2D1EA004F8FC8 /* Publishers+ZipMany.swift in Sources */,
 				F2C6259028B1A769004F8FC8 /* GeneralStateStorage.swift in Sources */,
+				F2CE421928B35BD7001BDB06 /* SaveImageUseCase.swift in Sources */,
 				F2C625CF28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift in Sources */,
 				F2C625CD28B1C701004F8FC8 /* WelcomeViewModel.swift in Sources */,
 				F2C6258028B18ADA004F8FC8 /* DefaultButtonStyle.swift in Sources */,

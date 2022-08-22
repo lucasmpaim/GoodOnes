@@ -17,6 +17,7 @@ protocol ImageDetailViewModeling: ObservableObject {
     func load()
     func classify()
     func copyPhotoIdToPasteboard()
+    func savePhotoWithDraw(canvasImage: UIImage)
 }
 
 final class ImageDetailViewModel: ImageDetailViewModeling {
@@ -31,6 +32,7 @@ final class ImageDetailViewModel: ImageDetailViewModeling {
     private var loadFullImage: ImageLoader
     
     private var classifyImageUseCase: ImageClassificationUseCase
+    private var saveImageUseCase: SaveImageUseCase
     
     private var isPredicting: Bool = false
     private var hasSucessDonePrediction: Bool = false
@@ -42,13 +44,15 @@ final class ImageDetailViewModel: ImageDetailViewModeling {
         meta: [ImageDetailMeta],
         photoId: String,
         classifyImageUseCase: ImageClassificationUseCase = VisionImageClassificationUseCaseImpl(),
-        pasteboard: Pasteboard = UIPasteboard.general
+        pasteboard: Pasteboard = UIPasteboard.general,
+        saveImageUseCase: SaveImageUseCase = SaveImageUseCaseImpl()
     ) {
         self.loadFullImage = loadFullImage
         self.classifyImageUseCase = classifyImageUseCase
         self.photoId = photoId
         self.meta = meta
         self.pasteboard = pasteboard
+        self.saveImageUseCase = saveImageUseCase
     }
     
     func load() {
@@ -93,6 +97,14 @@ final class ImageDetailViewModel: ImageDetailViewModeling {
     
     func copyPhotoIdToPasteboard() {
         pasteboard.string = photoId
+    }
+    
+    func savePhotoWithDraw(canvasImage: UIImage) {
+        guard case .idle(let image) = state else {
+            return
+        }
+        let mergedImage = saveImageUseCase.merge(canvasImage: canvasImage, image: image)
+        saveImageUseCase.save(image: mergedImage)
     }
 }
 
