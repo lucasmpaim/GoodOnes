@@ -9,6 +9,10 @@
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
+GoodOnes.xcodeproj/project.pbxproj/
+# Cocoapods
+Pods/
+Podfile.lock
 
 # Generated files
 *.o

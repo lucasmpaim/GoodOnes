@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3388B7371C27AAE0BC9EFEF5 /* Pods_GoodOnesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A5315039CA9EBE5D57F529C /* Pods_GoodOnesTests.framework */; };
+		687A69A47CFAF877B18763F8 /* Pods_GoodOnes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE47B5EB7DCC943D55CAF40 /* Pods_GoodOnes.framework */; };
 		F210A1AE28B313F6009B21C4 /* EyeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AD28B313F6009B21C4 /* EyeButton.swift */; };
 		F210A1B028B33599009B21C4 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AF28B33599009B21C4 /* Drawing.swift */; };
 		F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */; };
@@ -72,6 +74,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23820DF4D0DC204E88FCC00F /* Pods-GoodOnes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodOnes.release.xcconfig"; path = "Target Support Files/Pods-GoodOnes/Pods-GoodOnes.release.xcconfig"; sourceTree = "<group>"; };
+		2F59C48323503012A84FF950 /* Pods-GoodOnesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodOnesTests.debug.xcconfig"; path = "Target Support Files/Pods-GoodOnesTests/Pods-GoodOnesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4A5315039CA9EBE5D57F529C /* Pods_GoodOnesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodOnesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE47B5EB7DCC943D55CAF40 /* Pods_GoodOnes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodOnes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9845A729B1A130FC755E7DE8 /* Pods-GoodOnes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodOnes.debug.xcconfig"; path = "Target Support Files/Pods-GoodOnes/Pods-GoodOnes.debug.xcconfig"; sourceTree = "<group>"; };
+		9D8F75CF61A09C791DAE7F8D /* Pods-GoodOnesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodOnesTests.release.xcconfig"; path = "Target Support Files/Pods-GoodOnesTests/Pods-GoodOnesTests.release.xcconfig"; sourceTree = "<group>"; };
 		F210A1AD28B313F6009B21C4 /* EyeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeButton.swift; sourceTree = "<group>"; };
 		F210A1AF28B33599009B21C4 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		F2B2DB7F28AF048D00AA633B /* GoodOnes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodOnes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +141,7 @@
 				F2C625E028B2DBAF004F8FC8 /* DateHelper in Frameworks */,
 				F2B2DBB528AF383000AA633B /* Popovers in Frameworks */,
 				F2C6257228B16DD3004F8FC8 /* Lottie in Frameworks */,
+				687A69A47CFAF877B18763F8 /* Pods_GoodOnes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,12 +149,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3388B7371C27AAE0BC9EFEF5 /* Pods_GoodOnesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		701D065B1DAA787880507C65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9845A729B1A130FC755E7DE8 /* Pods-GoodOnes.debug.xcconfig */,
+				23820DF4D0DC204E88FCC00F /* Pods-GoodOnes.release.xcconfig */,
+				2F59C48323503012A84FF950 /* Pods-GoodOnesTests.debug.xcconfig */,
+				9D8F75CF61A09C791DAE7F8D /* Pods-GoodOnesTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F210A1B128B33E55009B21C4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +183,8 @@
 				F2B2DB8128AF048D00AA633B /* GoodOnes */,
 				F2B2DB9228AF049700AA633B /* GoodOnesTests */,
 				F2B2DB8028AF048D00AA633B /* Products */,
+				701D065B1DAA787880507C65 /* Pods */,
+				FF62A6774CCF8D1FC749BF4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -538,6 +562,15 @@
 			path = UseCases;
 			sourceTree = "<group>";
 		};
+		FF62A6774CCF8D1FC749BF4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FE47B5EB7DCC943D55CAF40 /* Pods_GoodOnes.framework */,
+				4A5315039CA9EBE5D57F529C /* Pods_GoodOnesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,9 +578,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2B2DBA328AF049700AA633B /* Build configuration list for PBXNativeTarget "GoodOnes" */;
 			buildPhases = (
+				320D8D00E8936AC7C9A96E65 /* [CP] Check Pods Manifest.lock */,
 				F2B2DB7B28AF048D00AA633B /* Sources */,
 				F2B2DB7C28AF048D00AA633B /* Frameworks */,
 				F2B2DB7D28AF048D00AA633B /* Resources */,
+				39A261E3B37EE1DBD9C8FC02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -568,6 +603,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2B2DBA628AF049700AA633B /* Build configuration list for PBXNativeTarget "GoodOnesTests" */;
 			buildPhases = (
+				159B96C13CC2FC4605FB4676 /* [CP] Check Pods Manifest.lock */,
 				F2B2DB8B28AF049700AA633B /* Sources */,
 				F2B2DB8C28AF049700AA633B /* Frameworks */,
 				F2B2DB8D28AF049700AA633B /* Resources */,
@@ -650,6 +686,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		159B96C13CC2FC4605FB4676 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodOnesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		320D8D00E8936AC7C9A96E65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GoodOnes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39A261E3B37EE1DBD9C8FC02 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodOnes/Pods-GoodOnes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GoodOnes/Pods-GoodOnes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GoodOnes/Pods-GoodOnes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F2B2DB7B28AF048D00AA633B /* Sources */ = {
@@ -833,6 +933,7 @@
 		};
 		F2B2DBA428AF049700AA633B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9845A729B1A130FC755E7DE8 /* Pods-GoodOnes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -863,6 +964,7 @@
 		};
 		F2B2DBA528AF049700AA633B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23820DF4D0DC204E88FCC00F /* Pods-GoodOnes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -893,6 +995,7 @@
 		};
 		F2B2DBA728AF049700AA633B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F59C48323503012A84FF950 /* Pods-GoodOnesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -913,6 +1016,7 @@
 		};
 		F2B2DBA828AF049700AA633B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D8F75CF61A09C791DAE7F8D /* Pods-GoodOnesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
