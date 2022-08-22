@@ -14,7 +14,6 @@
 		F26E45F028B4406400ABBD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26E45EF28B4406400ABBD7B /* AppDelegate.swift */; };
 		F26E45F228B442FA00ABBD7B /* design-drawing.json in Resources */ = {isa = PBXBuildFile; fileRef = F26E45F128B442FA00ABBD7B /* design-drawing.json */; };
 		F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */; };
-		F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8428AF048D00AA633B /* ContentView.swift */; };
 		F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8628AF049700AA633B /* Assets.xcassets */; };
 		F2B2DB8A28AF049700AA633B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8928AF049700AA633B /* Preview Assets.xcassets */; };
 		F2B2DB9428AF049700AA633B /* GoodOnesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB9328AF049700AA633B /* GoodOnesTests.swift */; };
@@ -87,7 +86,6 @@
 		F26E45F128B442FA00ABBD7B /* design-drawing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "design-drawing.json"; sourceTree = "<group>"; };
 		F2B2DB7F28AF048D00AA633B /* GoodOnes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodOnes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesApp.swift; sourceTree = "<group>"; };
-		F2B2DB8428AF048D00AA633B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F2B2DB8628AF049700AA633B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2B2DB8928AF049700AA633B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F2B2DB8F28AF049700AA633B /* GoodOnesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoodOnesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,7 +207,6 @@
 				F2C6254428B1688F004F8FC8 /* UI */,
 				F2B2DBAC28AF194C00AA633B /* GridFeature */,
 				F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */,
-				F2B2DB8428AF048D00AA633B /* ContentView.swift */,
 				F2B2DB8628AF049700AA633B /* Assets.xcassets */,
 				F2B2DB8828AF049700AA633B /* Preview Content */,
 				F26E45EF28B4406400ABBD7B /* AppDelegate.swift */,
@@ -238,7 +235,6 @@
 		F2B2DBAC28AF194C00AA633B /* GridFeature */ = {
 			isa = PBXGroup;
 			children = (
-				F2B2DBAE28AF198100AA633B /* GridFeature */,
 				F2B2DBAD28AF196900AA633B /* GridUI */,
 			);
 			path = GridFeature;
@@ -251,13 +247,6 @@
 				F2B2DBB128AF294B00AA633B /* GridView.swift */,
 			);
 			path = GridUI;
-			sourceTree = "<group>";
-		};
-		F2B2DBAE28AF198100AA633B /* GridFeature */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = GridFeature;
 			sourceTree = "<group>";
 		};
 		F2C6254428B1688F004F8FC8 /* UI */ = {
@@ -758,7 +747,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */,
 				F2C6258728B19B7C004F8FC8 /* MainCoordinator.swift in Sources */,
 				F2C6258928B19B98004F8FC8 /* Coordinator.swift in Sources */,
 				F2C625E928B30756004F8FC8 /* ImageDetail.swift in Sources */,
