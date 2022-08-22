@@ -13,6 +13,7 @@
 		F210A1B028B33599009B21C4 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AF28B33599009B21C4 /* Drawing.swift */; };
 		F26E45F028B4406400ABBD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26E45EF28B4406400ABBD7B /* AppDelegate.swift */; };
 		F26E45F228B442FA00ABBD7B /* design-drawing.json in Resources */ = {isa = PBXBuildFile; fileRef = F26E45F128B442FA00ABBD7B /* design-drawing.json */; };
+		F26E45F728B44BEA00ABBD7B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F26E45F628B44BEA00ABBD7B /* GoogleService-Info.plist */; };
 		F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */; };
 		F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8628AF049700AA633B /* Assets.xcassets */; };
 		F2B2DB8A28AF049700AA633B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8928AF049700AA633B /* Preview Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		F210A1AF28B33599009B21C4 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		F26E45EF28B4406400ABBD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F26E45F128B442FA00ABBD7B /* design-drawing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "design-drawing.json"; sourceTree = "<group>"; };
+		F26E45F628B44BEA00ABBD7B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F2B2DB7F28AF048D00AA633B /* GoodOnes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodOnes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesApp.swift; sourceTree = "<group>"; };
 		F2B2DB8628AF049700AA633B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,6 +178,14 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		F26E45F328B44B0000ABBD7B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F26E45F628B44BEA00ABBD7B /* GoogleService-Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		F2B2DB7628AF048D00AA633B = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 		F2B2DB8128AF048D00AA633B /* GoodOnes */ = {
 			isa = PBXGroup;
 			children = (
+				F26E45F328B44B0000ABBD7B /* Config */,
 				F2C625E428B2F47C004F8FC8 /* Scenes */,
 				F2C625DB28B2D1D7004F8FC8 /* Extensions */,
 				F2C625D028B28DD0004F8FC8 /* Coordinators */,
@@ -660,6 +671,7 @@
 			files = (
 				F2C625A228B1B051004F8FC8 /* traveling-camera.json in Resources */,
 				F2B2DB8A28AF049700AA633B /* Preview Assets.xcassets in Resources */,
+				F26E45F728B44BEA00ABBD7B /* GoogleService-Info.plist in Resources */,
 				F2C6257B28B17F50004F8FC8 /* alien-hypnotize.json in Resources */,
 				F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */,
 				F2C625A028B1B051004F8FC8 /* image-scanning.json in Resources */,

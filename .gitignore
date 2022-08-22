@@ -9,7 +9,10 @@
 *.xcuserstate
 project.xcworkspace/
 xcuserdata/
+
+GoogleService-Info.plist
 GoodOnes.xcodeproj/project.pbxproj/
+
 # Cocoapods
 Pods/
 Podfile.lock
@@ -23,6 +26,7 @@ Podfile.lock
 MANIFEST
 dist/
 build/
+
 
 # Backup files
 *~.nib
