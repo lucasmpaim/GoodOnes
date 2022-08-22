@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct GoodOnesApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var mainCoordinator: MainCoordinator = .init()
     
     init() {

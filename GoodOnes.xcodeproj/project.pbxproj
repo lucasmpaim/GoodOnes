@@ -11,6 +11,7 @@
 		687A69A47CFAF877B18763F8 /* Pods_GoodOnes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE47B5EB7DCC943D55CAF40 /* Pods_GoodOnes.framework */; };
 		F210A1AE28B313F6009B21C4 /* EyeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AD28B313F6009B21C4 /* EyeButton.swift */; };
 		F210A1B028B33599009B21C4 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AF28B33599009B21C4 /* Drawing.swift */; };
+		F26E45F028B4406400ABBD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26E45EF28B4406400ABBD7B /* AppDelegate.swift */; };
 		F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */; };
 		F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8428AF048D00AA633B /* ContentView.swift */; };
 		F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8628AF049700AA633B /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		9D8F75CF61A09C791DAE7F8D /* Pods-GoodOnesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodOnesTests.release.xcconfig"; path = "Target Support Files/Pods-GoodOnesTests/Pods-GoodOnesTests.release.xcconfig"; sourceTree = "<group>"; };
 		F210A1AD28B313F6009B21C4 /* EyeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeButton.swift; sourceTree = "<group>"; };
 		F210A1AF28B33599009B21C4 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		F26E45EF28B4406400ABBD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2B2DB7F28AF048D00AA633B /* GoodOnes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodOnes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesApp.swift; sourceTree = "<group>"; };
 		F2B2DB8428AF048D00AA633B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,7 +166,6 @@
 				2F59C48323503012A84FF950 /* Pods-GoodOnesTests.debug.xcconfig */,
 				9D8F75CF61A09C791DAE7F8D /* Pods-GoodOnesTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -211,6 +212,7 @@
 				F2B2DB8428AF048D00AA633B /* ContentView.swift */,
 				F2B2DB8628AF049700AA633B /* Assets.xcassets */,
 				F2B2DB8828AF049700AA633B /* Preview Content */,
+				F26E45EF28B4406400ABBD7B /* AppDelegate.swift */,
 			);
 			path = GoodOnes;
 			sourceTree = "<group>";
@@ -777,6 +779,7 @@
 				F2B2DBB228AF294B00AA633B /* GridView.swift in Sources */,
 				F2C6257928B17EB3004F8FC8 /* ErrorScreen.swift in Sources */,
 				F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */,
+				F26E45F028B4406400ABBD7B /* AppDelegate.swift in Sources */,
 				F2C6259428B1A79F004F8FC8 /* GeneralState.swift in Sources */,
 				F2C625D528B2A920004F8FC8 /* CameraRollGridViewModel.swift in Sources */,
 				F2C625C328B1B0C2004F8FC8 /* TutorialModel.swift in Sources */,
