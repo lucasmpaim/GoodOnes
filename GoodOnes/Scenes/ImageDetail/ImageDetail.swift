@@ -17,27 +17,61 @@ enum ImageDetailState {
     case loading, idle(UIImage), error
 }
 
-
+protocol ImageDetailViewModeling: ObservableObject {
+    var meta: [ImageDetailMeta] { get }
+    var state: ImageDetailState { get }
+}
 
 struct ImageDetail: View {
     
-    @State var isShowingMeta: Bool = true
+    @State var isShowingMeta: Bool = false
     @State var meta: [ImageDetailMeta] = []
     
     @State var image: UIImage? = nil
-    @State var isDrawing: Bool = false
     
     @State var state: ImageDetailState = .loading
+    
+    //MARK: - Drawing properties
+    @State var isDrawing: Bool = true
+    @State var newShape: Bool = true
+    @State var lines: [[CGPoint]] = []
+    @State var lineColor: Color = .black
     
     var body: some View {
         switch state {
         case .loading:
             LoadingView()
         case .idle(let uIImage):
-            idle(image: uIImage)
+            ZStack {
+                idle(image: uIImage)
+                if isDrawing {
+                    Canvas { context, size in
+                        for (offset, line) in lines.enumerated() {
+                            var path = Path()
+                            path.addLines(line)
+                            context.stroke(path, with: .color(.red), lineWidth: 2)
+                        }
+                    }.gesture(drawGesture())
+                }
+            }
         case .error:
             ErrorScreen()
         }
+    }
+    
+    fileprivate func drawGesture() -> _EndedGesture<_ChangedGesture<DragGesture>> {
+        return DragGesture(minimumDistance: .zero)
+            .onChanged { value in
+                print(value)
+                if newShape {
+                    newShape = false
+                    lines.append([])
+                }
+                lines[lines.count - 1].append(value.location)
+            }
+            .onEnded { _ in
+                newShape = true
+            }
     }
     
     @ViewBuilder
@@ -46,6 +80,9 @@ struct ImageDetail: View {
             Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
+                .gesture(
+                    drawGesture()
+                )
             if isShowingMeta {
                 VStack {
                     metaView()
@@ -54,25 +91,47 @@ struct ImageDetail: View {
         }
         .navigationTitle("Detail")
         .toolbar(content: {
-            ToolbarItem(placement: .navigationBarTrailing, content: {
+            ToolbarItem(placement: isDrawing ? .navigationBarLeading : .navigationBarTrailing, content: {
                 Button {
                     isDrawing.toggle()
                     isShowingMeta = false
                 } label: {
-                    Image(systemName: "pencil.tip.crop.circle")
+                    Image(systemName: isDrawing ? "stop.circle" : "pencil.tip.crop.circle")
                 }
             })
             ToolbarItem(placement: .navigationBarTrailing, content: {
-                EyeButton(isShowing: $isShowingMeta)
+                if !isDrawing {
+                    EyeButton(isShowing: $isShowingMeta)
+                }
             })
-            ToolbarItem(placement: .navigationBarLeading, content: {
-                Button { } label: {
-                    Image(systemName: "qrcode.viewfinder")
+            ToolbarItem(placement: .navigationBarTrailing, content: {
+                if isDrawing {
+                    Button { } label: {
+                        Image(systemName: "square.and.arrow.down.fill")
+                    }
+                }
+            })
+            ToolbarItem(placement: .navigationBarTrailing, content: {
+                if isDrawing {
+                    Button {
+                        lines = lines.dropLast()
+                    } label: {
+                        Image(systemName: "arrow.uturn.backward.circle")
+                    }
                 }
             })
             ToolbarItem(placement: .navigationBarLeading, content: {
-                Button { } label: {
-                    Image(systemName: "doc.text.image.fill")
+                if !isDrawing {
+                    Button { } label: {
+                        Image(systemName: "qrcode.viewfinder")
+                    }
+                }
+            })
+            ToolbarItem(placement: .navigationBarLeading, content: {
+                if !isDrawing {
+                    Button { } label: {
+                        Image(systemName: "doc.text.image.fill")
+                    }
                 }
             })
         })
@@ -100,7 +159,6 @@ struct ImageDetail: View {
             }
         }
         .aspectRatio(contentMode: .fit)
-        .background(Color.white)
         .transition(.slide)
     }
     
