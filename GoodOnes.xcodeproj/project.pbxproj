@@ -12,6 +12,7 @@
 		F210A1AE28B313F6009B21C4 /* EyeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AD28B313F6009B21C4 /* EyeButton.swift */; };
 		F210A1B028B33599009B21C4 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F210A1AF28B33599009B21C4 /* Drawing.swift */; };
 		F26E45F028B4406400ABBD7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26E45EF28B4406400ABBD7B /* AppDelegate.swift */; };
+		F26E45F228B442FA00ABBD7B /* design-drawing.json in Resources */ = {isa = PBXBuildFile; fileRef = F26E45F128B442FA00ABBD7B /* design-drawing.json */; };
 		F2B2DB8328AF048D00AA633B /* GoodOnesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */; };
 		F2B2DB8528AF048D00AA633B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B2DB8428AF048D00AA633B /* ContentView.swift */; };
 		F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2B2DB8628AF049700AA633B /* Assets.xcassets */; };
@@ -44,7 +45,6 @@
 		F2C625C328B1B0C2004F8FC8 /* TutorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625C228B1B0C2004F8FC8 /* TutorialModel.swift */; };
 		F2C625C528B1B0E2004F8FC8 /* TutorialAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625C428B1B0E2004F8FC8 /* TutorialAnimations.swift */; };
 		F2C625C828B1B1DF004F8FC8 /* TutorialContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625C728B1B1DF004F8FC8 /* TutorialContentProvider.swift */; };
-		F2C625CA28B1B2AE004F8FC8 /* design-drawing.json in Resources */ = {isa = PBXBuildFile; fileRef = F2C625C928B1B2AE004F8FC8 /* design-drawing.json */; };
 		F2C625CD28B1C701004F8FC8 /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625CC28B1C701004F8FC8 /* WelcomeViewModel.swift */; };
 		F2C625CF28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625CE28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift */; };
 		F2C625D228B28DFC004F8FC8 /* CameraRollCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C625D128B28DFB004F8FC8 /* CameraRollCoordinator.swift */; };
@@ -84,6 +84,7 @@
 		F210A1AD28B313F6009B21C4 /* EyeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeButton.swift; sourceTree = "<group>"; };
 		F210A1AF28B33599009B21C4 /* Drawing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
 		F26E45EF28B4406400ABBD7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F26E45F128B442FA00ABBD7B /* design-drawing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "design-drawing.json"; sourceTree = "<group>"; };
 		F2B2DB7F28AF048D00AA633B /* GoodOnes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodOnes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2B2DB8228AF048D00AA633B /* GoodOnesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodOnesApp.swift; sourceTree = "<group>"; };
 		F2B2DB8428AF048D00AA633B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -116,7 +117,6 @@
 		F2C625C228B1B0C2004F8FC8 /* TutorialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialModel.swift; sourceTree = "<group>"; };
 		F2C625C428B1B0E2004F8FC8 /* TutorialAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialAnimations.swift; sourceTree = "<group>"; };
 		F2C625C728B1B1DF004F8FC8 /* TutorialContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentProvider.swift; sourceTree = "<group>"; };
-		F2C625C928B1B2AE004F8FC8 /* design-drawing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "design-drawing.json"; sourceTree = "<group>"; };
 		F2C625CC28B1C701004F8FC8 /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		F2C625CE28B1CB1F004F8FC8 /* GalleryPermissionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermissionUseCase.swift; sourceTree = "<group>"; };
 		F2C625D128B28DFB004F8FC8 /* CameraRollCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRollCoordinator.swift; sourceTree = "<group>"; };
@@ -449,7 +449,7 @@
 		F2C6259C28B1B031004F8FC8 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				F2C625C928B1B2AE004F8FC8 /* design-drawing.json */,
+				F26E45F128B442FA00ABBD7B /* design-drawing.json */,
 				F2C6259D28B1B050004F8FC8 /* image-scanning.json */,
 				F2C6259E28B1B050004F8FC8 /* shiba-relax.json */,
 				F2C6259F28B1B051004F8FC8 /* traveling-camera.json */,
@@ -669,13 +669,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2C625CA28B1B2AE004F8FC8 /* design-drawing.json in Resources */,
 				F2C625A228B1B051004F8FC8 /* traveling-camera.json in Resources */,
 				F2B2DB8A28AF049700AA633B /* Preview Assets.xcassets in Resources */,
 				F2C6257B28B17F50004F8FC8 /* alien-hypnotize.json in Resources */,
 				F2B2DB8728AF049700AA633B /* Assets.xcassets in Resources */,
 				F2C625A028B1B051004F8FC8 /* image-scanning.json in Resources */,
 				F2C625A128B1B051004F8FC8 /* shiba-relax.json in Resources */,
+				F26E45F228B442FA00ABBD7B /* design-drawing.json in Resources */,
 				F2C6256F28B16D7F004F8FC8 /* bird-waiting.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
