@@ -44,7 +44,7 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
                 ZStack {
                     idle(image: uIImage)
                     drawingView
-                }
+                }.background(Color.black)
             case .error:
                 ErrorScreen(
                     showRetry: true,
@@ -68,9 +68,9 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
                 metaView()
             }
         }
-        .navigationTitle("Detail")
+        .navigationTitle(Text("Detail"))
         .toolbar(content: {
-            ToolbarItem(placement: isDrawing ? .navigationBarLeading : .navigationBarTrailing, content: {
+            ToolbarItem(placement: .navigationBarTrailing, content: {
                 Button {
                     isDrawing.toggle()
                     viewModel.isShowingMeta = false
@@ -156,7 +156,9 @@ struct ImageDetail<VM: ImageDetailViewModeling>: View {
                         Text(element.description)
                             .padding(needTopOffset ? [.top, .trailing] : .trailing)
                             .frame(alignment: .trailing)
-                    }.frame(maxWidth: .infinity)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .foregroundColor(Color.black)
                 }
             }
             .background(Color.white)
