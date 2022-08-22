@@ -17,7 +17,8 @@ final class MainCoordinator : ObservableObject, Coordinator {
     
     private let repository: GeneralStateStorage
     
-    private var childCoordinators = [(Coordinator, AnyCancellable)]()
+    private var cancellables = Set<AnyCancellable>()
+    private var childCoordinators = [Coordinator]()
     
     init(repository: GeneralStateStorage = GeneralStateRepository()) {
         self.repository = repository
@@ -33,16 +34,17 @@ final class MainCoordinator : ObservableObject, Coordinator {
     
     fileprivate func enterOnGrid() {
         let coordinator = CameraRollCoordinator()
-        
-        let token = coordinator.objectWillChange
+        childCoordinators.append(coordinator)
+
+        coordinator.objectWillChange
             .sink(receiveCompletion: { _ in
-                self.childCoordinators.removeAll(where: { $0.0 is CameraRollCoordinator })
+                self.childCoordinators.removeAll(where: { $0 is CameraRollCoordinator })
                 self.enterOnWelcome()
             }, receiveValue: { [unowned coordinator] in
                 self.currentRoute = coordinator.currentRoute
             })
+            .store(in: &cancellables)
         
-        childCoordinators.append((coordinator, token))
         coordinator.start()
     }
     

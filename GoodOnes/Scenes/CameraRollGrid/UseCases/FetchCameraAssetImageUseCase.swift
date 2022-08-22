@@ -30,12 +30,13 @@ protocol FetchCameraAssetImageUseCase {
 
 final class FetchCameraAssetImageUseCaseImpl : FetchCameraAssetImageUseCase {
     func fetchImage(_ request: FetchCameraAssetImageRequest) -> AnyPublisher<UIImage, ImageLoadError> {
-        return Future { [unowned self] promise in
+        let options = makeOptionsFor(request)
+        return Future { promise in
             PHImageManager.default().requestImage(
                 for: request.asset,
                 targetSize: request.targetSize,
                 contentMode: .aspectFill,
-                options: makeOptionsFor(request),
+                options: options,
                 resultHandler: { image, info in
                     guard let image = image else {
                         promise(.failure(.cantLoadImage))

@@ -21,8 +21,9 @@ protocol FetchCameraAssetsUseCase {
 
 final class FetchCameraAssetsUseCaseImpl : FetchCameraAssetsUseCase {
     func fetchCameraPhotos(_ request: FetchCameraAssetsRequest) -> AnyPublisher<[PHAsset], Never> {
-        return Future { [unowned self] promise in
-            let result = PHAsset.fetchAssets(with: request.type, options: self.makeOptionsFor(request))
+        let options = self.makeOptionsFor(request)
+        return Future { promise in
+            let result = PHAsset.fetchAssets(with: request.type, options: options)
             promise(.success(Array(_immutableCocoaArray: result)))
         }
         .eraseToAnyPublisher()
