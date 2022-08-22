@@ -95,20 +95,20 @@ fileprivate extension GridView {
                     
                     
                 }
-            }
+            }.highPriorityGesture(MagnificationGesture()
+                .onChanged({ val in
+                    linksEnabled = false
+                    direction = val <= 1.3 ? .close : .open
+                })
+                .onEnded { val in
+                    linksEnabled = true
+                    self.updateCellSize()
+                }
+            )
             .padding()
         }
         .delaysTouches(for: 0.3)
-        .highPriorityGesture(MagnificationGesture(minimumScaleDelta: 0.3)
-            .onChanged({ val in
-                linksEnabled = false
-                direction = val <= 1.3 ? .close : .open
-            })
-            .onEnded { val in
-                linksEnabled = true
-                self.updateCellSize()
-            }
-        )
+        
         .navigationTitle(screenTitle)
         .toolbar {
             ToolbarItem(placement: .principal) {
