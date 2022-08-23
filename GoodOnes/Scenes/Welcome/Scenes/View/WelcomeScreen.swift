@@ -59,7 +59,9 @@ fileprivate extension WelcomeScreen {
                     viewModel.selectGallery()
                 }
                     .buttonStyle(DefaultButtonStyle())
-                Button("Google Photos") {}
+                Button("Google Photos") {
+                    viewModel.selectGPhotos()
+                }
                     .buttonStyle(DefaultButtonStyle())
             }.frame(maxWidth: .infinity)
             Spacer()

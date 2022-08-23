@@ -1,15 +1,15 @@
 //
-//  CameraRollCoordinator.swift
+//  GPhotosCoordinator.swift
 //  GoodOnes
 //
-//  Created by Lucas Paim on 21/08/22.
+//  Created by Lucas Paim on 22/08/22.
 //
 
 import Foundation
 import SwiftUI
 import Combine
 
-final class CameraRollCoordinator : ObservableObject, Coordinator {
+final class GPhotosCoordinator : ObservableObject, Coordinator {
     
     public let objectWillChange = PassthroughSubject<Void, Never>()
     
@@ -23,8 +23,8 @@ final class CameraRollCoordinator : ObservableObject, Coordinator {
         currentRoute = AnyView {
             NavigationView {
                 GridView(
-                    viewModel: CameraRollGridViewModel(coordinator: self),
-                    screenTitle: "Camera Roll"
+                    viewModel: GPhotosViewModel(coordinator: self),
+                    screenTitle: "GPhotos"
                 )
             }
         }
@@ -40,7 +40,7 @@ final class CameraRollCoordinator : ObservableObject, Coordinator {
     
 }
 
-extension CameraRollCoordinator : GridViewCoordinable {
+extension GPhotosCoordinator : GridViewCoordinable {
     func photoDetailDestination(
         loader: @escaping ImageDetailViewModel.ImageLoader,
         meta: [ImageDetailMeta],

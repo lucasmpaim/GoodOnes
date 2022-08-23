@@ -49,8 +49,6 @@ final class CameraRollGridViewModel: GridViewModeling {
     private let fetchAssetImageUseCase: FetchCameraAssetImageUseCase
     
     private var assets = [PHAsset]()
-    
-    // MARK: - Private
     private var cancellables = Set<AnyCancellable>()
     
     init(

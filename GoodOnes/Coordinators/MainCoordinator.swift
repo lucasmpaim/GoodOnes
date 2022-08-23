@@ -32,22 +32,6 @@ final class MainCoordinator : ObservableObject, Coordinator {
         }
     }
     
-    fileprivate func enterOnGrid() {
-        let coordinator = CameraRollCoordinator()
-        childCoordinators.append(coordinator)
-
-        coordinator.objectWillChange
-            .sink(receiveCompletion: { _ in
-                self.childCoordinators.removeAll(where: { $0 is CameraRollCoordinator })
-                self.enterOnWelcome()
-            }, receiveValue: { [unowned coordinator] in
-                self.currentRoute = coordinator.currentRoute
-            })
-            .store(in: &cancellables)
-        
-        coordinator.start()
-    }
-    
     fileprivate func enterOnTutorial() {
         currentRoute = AnyView {
             TutorialScreen(
@@ -76,6 +60,34 @@ extension MainCoordinator: TutorialCoordinable {
 
 extension MainCoordinator: WelcomeViewCoordinable {
     func selectGallery() {
-        enterOnGrid()
+        let coordinator = CameraRollCoordinator()
+        childCoordinators.append(coordinator)
+
+        coordinator.objectWillChange
+            .sink(receiveCompletion: { _ in
+                self.childCoordinators.removeAll(where: { $0 is CameraRollCoordinator })
+                self.enterOnWelcome()
+            }, receiveValue: { [unowned coordinator] in
+                self.currentRoute = coordinator.currentRoute
+            })
+            .store(in: &cancellables)
+        
+        coordinator.start()
+    }
+    
+    func selectGPhotos() {
+        let coordinator = GPhotosCoordinator()
+        childCoordinators.append(coordinator)
+
+        coordinator.objectWillChange
+            .sink(receiveCompletion: { _ in
+                self.childCoordinators.removeAll(where: { $0 is CameraRollCoordinator })
+                self.enterOnWelcome()
+            }, receiveValue: { [unowned coordinator] in
+                self.currentRoute = coordinator.currentRoute
+            })
+            .store(in: &cancellables)
+        
+        coordinator.start()
     }
 }

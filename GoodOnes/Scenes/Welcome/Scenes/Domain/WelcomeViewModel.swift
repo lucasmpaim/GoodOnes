@@ -8,7 +8,6 @@
 import Foundation
 import Combine
 
-
 enum WelcomeViewState {
     case error(String?)
     case idle
@@ -24,27 +23,30 @@ protocol WelcomeViewModeling: ObservableObject {
 
 protocol WelcomeViewCoordinable {
     func selectGallery()
+    func selectGPhotos()
 }
 
 final class WelcomeViewModel: WelcomeViewModeling {
     @Published var state: WelcomeViewState = .idle
  
     private let galleryPermissionUseCase: GalleryPermissionUseCase
-    
+    private let gPhotosPermissionUseCase: GPhotosPermissionUseCase
     let coorditor: WelcomeViewCoordinable
     
-    var galleryCancelationToken: AnyCancellable? = nil
-    
+    private var cancellables = Set<AnyCancellable>()
+
     init(
         galleryPermissionUseCase: GalleryPermissionUseCase = GalleryPermissionUseCaseImpl(),
+        gPhotosPermissionUseCase: GPhotosPermissionUseCase = GPhotosPermissionUseCaseImpl(),
         coorditor: WelcomeViewCoordinable
     ) {
         self.galleryPermissionUseCase = galleryPermissionUseCase
+        self.gPhotosPermissionUseCase = gPhotosPermissionUseCase
         self.coorditor = coorditor
     }
     
     func selectGallery() {
-        galleryCancelationToken = galleryPermissionUseCase
+        galleryPermissionUseCase
             .askPermission()
             .sink(receiveCompletion: { [weak self] status in
                 guard case .failure(let error) = status else {
@@ -54,11 +56,21 @@ final class WelcomeViewModel: WelcomeViewModeling {
                 
                 self?.state = .error(error == .denied ? "We can't to anything without the permission 😔" : nil)
             }, receiveValue: { })
-            
+            .store(in: &cancellables)
     }
     
     func selectGPhotos() {
-        
+        gPhotosPermissionUseCase
+            .askPermission()
+            .sink(receiveCompletion: { [weak self] status in
+                guard case .failure(let error) = status else {
+                    self?.coorditor.selectGPhotos()
+                    return
+                }
+                
+                self?.state = .error(error == .denied ? "We can't to anything without the permission 😔" : nil)
+            }, receiveValue: { })
+            .store(in: &cancellables)
     }
     
     func closeError() {

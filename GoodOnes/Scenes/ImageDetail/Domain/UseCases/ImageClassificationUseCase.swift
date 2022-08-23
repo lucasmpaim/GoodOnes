@@ -31,8 +31,13 @@ final class VisionImageClassificationUseCaseImpl : ImageClassificationUseCase {
                     promise(.failure(.errorWhenClassifying))
                     return
                 }
+                #if DEBUG
+                observations.forEach {
+                    print("\($0.identifier) : \($0.confidence.uiPercentage!)")
+                }
+                #endif
                 let interestingObservations = observations.filter {
-                    $0.confidence >= 0.8
+                    $0.confidence >= 0.6
                 }
                 promise(
                     .success(

@@ -7,12 +7,20 @@
 
 import Foundation
 import UIKit
+import GPhotos
 
-class AppDelegate: NSObject, UIApplicationDelegate {
+final class AppDelegate: NSObject, UIApplicationDelegate {
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
     ) -> Bool {
+        GPhotos.initialize(with: .init())
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let gphotosHandled = GPhotos.continueAuthorizationFlow(with: url)
+        // other app links
+        return gphotosHandled
     }
 }
