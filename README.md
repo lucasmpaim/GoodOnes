@@ -26,11 +26,11 @@ The usage of the folders:
 
 ## Improvements
 
-- [] Better handling of DarkMode
-- [] Better UX to display Vision Information
-- [] Decouple Use Case's to make it testable
-- [] Better abstraction btw Camera Roll and Google Photos to re-use the same ViewModel
-- [] Unit Tests
+- [ ] Better handling of DarkMode
+- [ ] Better UX to display Vision Information
+- [ ] Decouple Use Case's to make it testable
+- [ ] Better abstraction btw Camera Roll and Google Photos to re-use the same ViewModel
+- [ ] Unit Tests
 
 
 * Another good reference of my work:
